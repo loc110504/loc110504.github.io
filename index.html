@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cao Hoang Loc - Portfolio</title>
+    <style>
+        /* === RESET & BASE STYLES === */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        :root {
+            --primary: #007bff;
+            --primary-dark: #0062cc;
+            --secondary: #6c757d;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --border: #e9ecef;
+            --shadow: rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        body { 
+            font-family: 'Georgia', serif; 
+            line-height: 1.6; 
+            color: var(--dark); 
+            background-color: var(--light); 
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* === HEADER BANNER === */
+        .welcome-banner {
+            background: linear-gradient(135deg, #2c3e50, #1a2530);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 0 0 15px 15px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        
+        .welcome-text {
+            font-size: 4.5rem;
+            font-weight: 500;
+            letter-spacing: 0.6px;
+            position: center;
+            background: linear-gradient(to right, #fff, #e0f7ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+        }
+        
+        /* === PERSONAL SECTION === */
+        .personal-info {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px var(--shadow);
+            display: flex;
+            gap: 2rem;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            flex-shrink: 0;
+        }
+        
+        .info-text {
+            flex: 1;
+        }
+        
+        .name {
+            font-size: 2.5rem;
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            display: block;
+        }
+        
+        .bio {
+            color: #555;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+        
+        /* === CONTACT LINKS === */
+        .contact-links { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 0.8rem; 
+            margin-top: 1rem; 
+        }
+        
+        .contact-link { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            color: var(--dark); 
+            text-decoration: none; 
+            padding: 0.6rem 1.2rem; 
+            border: 1px solid var(--border); 
+            border-radius: 30px; 
+            transition: var(--transition); 
+            font-size: 0.9rem; 
+            background: var(--light);
+        }
+        
+        .contact-link:hover { 
+            background-color: var(--primary); 
+            color: white; 
+            border-color: var(--primary); 
+            transform: translateY(-2px);
+        }
+        
+        /* === SECTION STYLES === */
+        .section { 
+            background: white; 
+            border-radius: 10px; 
+            padding: 2rem; 
+            margin-bottom: 1.5rem; 
+            box-shadow: 0 5px 15px var(--shadow); 
+        }
+        
+        .section-title {
+            font-size: 1.8rem; 
+            color: var(--primary);
+            margin-bottom: 1.5rem; 
+            font-weight: 600;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        /* === RESEARCH INTERESTS === */
+        .interests-list {
+            list-style: none;
+            padding-left: 1rem;
+        }
+        
+        .interest-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .interest-item:before {
+            content: "•";
+            color: var(--primary);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -0.3rem;
+        }
+        
+        /* === WORK EXPERIENCE === */
+        .experience-list {
+            list-style: none;
+        }
+        
+        .experience-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .experience-header {
+            margin-bottom: 1rem;
+        }
+        
+        .company {
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        
+        .company a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .company a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        
+        .position {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .work-meta {
+            display: flex;
+            gap: 1.5rem;
+            color: var(--secondary);
+            font-size: 0.95rem;
+        }
+        
+        .achievement-list {
+            padding-left: 1.5rem;
+        }
+        
+        .achievement {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .achievement:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        /* === PUBLICATIONS === */
+        .publication-notice {
+            text-align: center;
+            color: var(--secondary);
+            font-style: italic;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+        
+        /* === FOOTER === */
+        footer { 
+            text-align: center; 
+            padding: 2rem 0; 
+            color: var(--secondary); 
+            font-size: 0.9rem; 
+            margin-top: 1rem;
+        }
+        
+        /* === ANIMATIONS === */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .welcome-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            
+            .personal-info {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+            
+            .contact-links {
+                justify-content: center;
+            }
+            
+            .work-meta {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+            
+            .welcome-text {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Banner -->
+        <header class="welcome-banner">
+            <div class="welcome-text">Welcome to My Homepage</div>
+        </header>
+
+        <!-- Personal Information -->
+        <section class="personal-info">
+        <img src="profile.png" alt="Cao Hoang Loc" class="avatar" />
+        <div class="info-text">
+            <h1 class="name">Cao Hoang Loc</h1>
+            <span class="subtitle">B.S in Data Science</span>
+            <p class="bio">
+            I'm a third-year Data Science student at the University of Science,
+            Ho Chi Minh City, Vietnam, specializing in AI research and development.
+            </p>
+
+            <div class="contact-links">
+            <a href="mailto:2212724@student.hcmus.edu.vn" class="contact-link">
+                <img
+                src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/envelope.svg"
+                alt="Email"
+                width="18"
+                />
+                Email
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/hoang-loc-cao-3a7502373/"
+                target="_blank"
+                rel="noopener"
+                class="contact-link"
+            >
+                <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/linkedin.svg"
+                alt="LinkedIn"
+                width="18"
+                />
+                LinkedIn
+            </a>
+
+            <a
+                href="https://github.com/loc110504"
+                target="_blank"
+                rel="noopener"
+                class="contact-link"
+            >
+                <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/github.svg"
+                alt="GitHub"
+                width="18"
+                />
+                GitHub
+            </a>
+
+            <!-- CV Link -->
+            <a
+                href="https://drive.google.com/file/d/15b0wWadYBQt2XZagDfHjCTSluU6wzSkB/view?usp=sharing"
+                download
+                target="_blank"
+                rel="noopener"
+                class="contact-link"
+            >
+                <img
+                src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/file-earmark-person.svg"
+                alt="CV"
+                width="18"
+                />
+                CV
+            </a>
+            </div>
+        </div>
+        </section>
+
+
+        <!-- Research Interests -->
+        <section class="section">
+            <h2 class="section-title">Research Interests</h2>
+            <ul class="interests-list">
+                <li class="interest-item">Explainable, Contestable and Human-Centered AI</li>
+                <li class="interest-item">Weakly/Semi-Supervised Medical Image Segmentation</li>
+            </ul>
+        </section>
+
+        <!-- Publications -->
+        <section class="section">
+            <h2 class="section-title">Selected Publications (Journals: J, Conferences: C)</h2>
+            <p class="publication-notice">Publications will be updated as research progresses </p>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="section">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <ul class="experience-list">
+                <li class="experience-item">
+                    <div class="experience-header">
+                        <span class="company">
+                            <a href="https://qaidora.com/" target="_blank" rel="noopener">
+                                Quy Nhon AI Center – FPT Software
+                            </a>
+                        </span>
+                        <span class="position">AI Researcher Internship</span>
+                        <div class="work-meta">
+                            <span class="date">May 2025 – Aug 2025</span>
+                            <span class="location">Quy Nhon, Vietnam</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="interests-list">
+                        <li class="interest-item">
+                            Designed and implemented an AI-driven multilingual interview system leveraging 
+                            Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) techniques, 
+                            achieving significant improvements in resume-to-job description alignment 
+                            scores (>70%) and content preservation (>72%).
+                        </li>
+                        <li class="interest-item">
+                            Integrated state-of-the-art AI technologies: GPT-SoVITS for natural speech 
+                            synthesis, Whisper for multilingual speech recognition, and Ditto for 
+                            diffusion-based talking-head generation, resulting in 80% improvement in 
+                            candidate engagement metrics.
+                        </li>
+                        <li class="interest-item">
+                            Conducted in-depth research in Contestable AI (CAI) and Explainable AI (XAI) 
+                            to develop trustworthy and human-centered AI solutions.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+            
+        <footer>
+            <p>&copy; 2025 Cao Hoang Loc. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
