@@ -30,6 +30,10 @@
             background-color: var(--light); 
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         .container {
             width: 90%;
             max-width: 1200px;
@@ -37,31 +41,130 @@
             padding: 20px;
         }
 
+        /* === NAVIGATION BAR === */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+        }
+        
+        .nav-logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .nav-logo:hover {
+            color: var(--primary-dark);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .nav-link.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Mobile menu toggle */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
         /* === HEADER BANNER === */
         .welcome-banner {
             background: linear-gradient(135deg, #2c3e50, #1a2530);
             color: white;
-            padding: 1.5rem;
-            border-radius: 0 0 15px 15px;
+            padding: 4rem 0;
+            margin-top: 80px;
             margin-bottom: 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 1.5rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
         }
         
+        .welcome-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
         
         .welcome-text {
             font-size: 4.5rem;
             font-weight: 500;
             letter-spacing: 0.6px;
-            position: center;
-            background: linear-gradient(to right, #fff, #e0f7ff);
+            text-align: center;
+            background: linear-gradient(to right, #fff, #e0f7ff, #fff);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            
+            position: relative;
+            z-index: 1;
         }
         
         /* === PERSONAL SECTION === */
@@ -145,7 +248,8 @@
             border-radius: 10px; 
             padding: 2rem; 
             margin-bottom: 1.5rem; 
-            box-shadow: 0 5px 15px var(--shadow); 
+            box-shadow: 0 5px 15px var(--shadow);
+            scroll-margin-top: 100px;
         }
         
         .section-title {
@@ -266,19 +370,51 @@
             margin-top: 1rem;
         }
         
-        /* === ANIMATIONS === */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
         /* === RESPONSIVE DESIGN === */
         @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: var(--transition);
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+            
             .welcome-banner {
                 flex-direction: column;
                 text-align: center;
-                padding: 1.5rem;
+                padding: 2rem 1rem;
+            }
+            
+            .welcome-text {
+                font-size: 2.5rem;
             }
             
             .personal-info {
@@ -300,90 +436,115 @@
                 font-size: 2rem;
             }
             
-            .welcome-text {
-                font-size: 1.5rem;
+            .nav-container {
+                padding: 0.8rem 1rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Loc's Homepagec</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#research" class="nav-link">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#publications" class="nav-link">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <!-- Welcome Banner -->
-        <header class="welcome-banner">
+        <header class="welcome-banner" id="home">
             <div class="welcome-text">Welcome to My Homepage</div>
         </header>
 
         <!-- Personal Information -->
         <section class="personal-info">
-        <img src="profile.png" alt="Cao Hoang Loc" class="avatar" />
-        <div class="info-text">
-            <h1 class="name">Cao Hoang Loc</h1>
-            <span class="subtitle">B.S in Data Science</span>
-            <p class="bio">
-            I'm a third-year Data Science student at the University of Science,
-            Ho Chi Minh City, Vietnam, specializing in AI research and development.
-            </p>
+            <img src="profile.png" alt="Cao Hoang Loc" class="avatar" />
+            <div class="info-text">
+                <h1 class="name">Cao Hoang Loc</h1>
+                <span class="subtitle">B.S in Data Science</span>
+                <p class="bio">
+                    I'm a third-year Data Science student at the University of Science,
+                    Ho Chi Minh City, Vietnam, specializing in AI research and development.
+                </p>
 
-            <div class="contact-links">
-            <a href="mailto:2212724@student.hcmus.edu.vn" class="contact-link">
-                <img
-                src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/envelope.svg"
-                alt="Email"
-                width="18"
-                />
-                Email
-            </a>
+                <div class="contact-links">
+                    <a href="mailto:2212724@student.hcmus.edu.vn" class="contact-link">
+                        <img
+                            src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/envelope.svg"
+                            alt="Email"
+                            width="18"
+                        />
+                        Email
+                    </a>
 
-            <a
-                href="https://www.linkedin.com/in/hoang-loc-cao-3a7502373/"
-                target="_blank"
-                rel="noopener"
-                class="contact-link"
-            >
-                <img
-                src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/linkedin.svg"
-                alt="LinkedIn"
-                width="18"
-                />
-                LinkedIn
-            </a>
+                    <a
+                        href="https://www.linkedin.com/in/hoang-loc-cao-3a7502373/"
+                        target="_blank"
+                        rel="noopener"
+                        class="contact-link"
+                    >
+                        <img
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/linkedin.svg"
+                            alt="LinkedIn"
+                            width="18"
+                        />
+                        LinkedIn
+                    </a>
 
-            <a
-                href="https://github.com/loc110504"
-                target="_blank"
-                rel="noopener"
-                class="contact-link"
-            >
-                <img
-                src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/github.svg"
-                alt="GitHub"
-                width="18"
-                />
-                GitHub
-            </a>
+                    <a
+                        href="https://github.com/loc110504"
+                        target="_blank"
+                        rel="noopener"
+                        class="contact-link"
+                    >
+                        <img
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/github.svg"
+                            alt="GitHub"
+                            width="18"
+                        />
+                        GitHub
+                    </a>
 
-            <!-- CV Link -->
-            <a
-                href="https://drive.google.com/file/d/15b0wWadYBQt2XZagDfHjCTSluU6wzSkB/view?usp=sharing"
-                download
-                target="_blank"
-                rel="noopener"
-                class="contact-link"
-            >
-                <img
-                src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/file-earmark-person.svg"
-                alt="CV"
-                width="18"
-                />
-                CV
-            </a>
+                    <!-- CV Link -->
+                    <a
+                        href="https://drive.google.com/file/d/15b0wWadYBQt2XZagDfHjCTSluU6wzSkB/view?usp=sharing"
+                        download
+                        target="_blank"
+                        rel="noopener"
+                        class="contact-link"
+                    >
+                        <img
+                            src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/file-earmark-person.svg"
+                            alt="CV"
+                            width="18"
+                        />
+                        CV
+                    </a>
+                </div>
             </div>
-        </div>
         </section>
 
-
         <!-- Research Interests -->
-        <section class="section">
+        <section class="section" id="research">
             <h2 class="section-title">Research Interests</h2>
             <ul class="interests-list">
                 <li class="interest-item">Explainable, Contestable and Human-Centered AI</li>
@@ -392,13 +553,13 @@
         </section>
 
         <!-- Publications -->
-        <section class="section">
+        <section class="section" id="publications">
             <h2 class="section-title">Selected Publications (Journals: J, Conferences: C)</h2>
-            <p class="publication-notice">Publications will be updated as research progresses </p>
+            <p class="publication-notice">Publications will be updated as research progresses</p>
         </section>
 
         <!-- Work Experience -->
-        <section class="section">
+        <section class="section" id="experience">
             <h2 class="section-title">Work Experience</h2>
             
             <ul class="experience-list">
@@ -442,5 +603,60 @@
             <p>&copy; 2025 Cao Hoang Loc. All rights reserved.</p>
         </footer>
     </div>
+
+    <script>
+        // Mobile menu toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Active navigation link highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section, .welcome-banner');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
