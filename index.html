@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loc Cao | Homepage</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --muted: #f1f5f9;
+            --muted-foreground: #64748b;
+            --border: rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        h1 {
+            font-size: 1.875rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        
+        h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        h3 {
+            font-size: 1.125rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        
+        .card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 0.625rem;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .badge-outline {
+            border: 1px solid var(--border);
+            background: transparent;
+        }
+        
+        .badge-secondary {
+            background: var(--muted);
+            color: #1e3a8a;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-hover);
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--border);
+            background: white;
+            color: #030213;
+        }
+        
+        .btn-outline:hover {
+            background: var(--muted);
+        }
+        
+        .btn-icon {
+            padding: 0.5rem;
+            background: transparent;
+        }
+        
+        .btn-icon:hover {
+            background: var(--muted);
+        }
+        
+        .tab-list {
+            display: inline-flex;
+            background: var(--muted);
+            border-radius: 0.375rem;
+            padding: 0.25rem;
+        }
+        
+        .tab-trigger {
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: transparent;
+            border: none;
+        }
+        
+        .tab-trigger.active {
+            background: white;
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .icon-bg {
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            display: inline-flex;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-white">
+    <!-- Header -->
+    <header class="border-b sticky top-0 z-50 bg-white shadow-sm" style="border-color: var(--border);">
+        <div class="container mx-auto px-4 py-4">
+            <nav class="flex items-center justify-between">
+                <h1 class="font-bold text-3xl" style="color: #f40c0cdb;">Loc Cao's Homepage</h1>
+                    <div class="flex items-center gap-3">
+                    <!-- Email -->
+                    <a href="mailto:chloc22@clc.fitus.edu.vn" target="_blank" rel="noopener noreferrer"
+                        class="relative group btn btn-icon rounded-full">
+                        <i data-lucide="mail" class="w-5 h-5 text-gray-600"></i>
+                        <span class="absolute top-10 left-1/2 -translate-x-1/2 text-xs text-white bg-gray-800 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        Email
+                        </span>
+                    </a>
+
+                    <!-- Google Scholar -->
+                    <a href="https://scholar.google.com/citations?user=szHDzgkAAAAJ" target="_blank" rel="noopener noreferrer"
+                        class="relative group btn btn-icon rounded-full">
+                        <i data-lucide="graduation-cap" class="w-5 h-5" style="color: #4285F4;"></i>
+                        <span class="absolute top-10 left-1/2 -translate-x-1/2 text-xs text-white bg-gray-800 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        Scholar
+                        </span>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/loc110504" target="_blank" rel="noopener noreferrer"
+                        class="relative group btn btn-icon rounded-full">
+                        <i data-lucide="github" class="w-5 h-5" style="color: #000000;"></i>
+                        <span class="absolute top-10 left-1/2 -translate-x-1/2 text-xs text-white bg-gray-800 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        GitHub
+                        </span>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com/in/loccao1105" target="_blank" rel="noopener noreferrer"
+                        class="relative group btn btn-icon rounded-full">
+                        <i data-lucide="linkedin" class="w-5 h-5" style="color: #0A66C2;"></i>
+                        <span class="absolute top-10 left-1/2 -translate-x-1/2 text-xs text-white bg-gray-800 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        LinkedIn
+                        </span>
+                    </a>
+
+                    <!-- CV -->
+                    <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"
+                        class="relative group btn btn-icon rounded-full">
+                        <i data-lucide="file-text" class="w-5 h-5 text-gray-600" style="color: #e21010;"></i>
+                        <span class="absolute top-10 left-1/2 -translate-x-1/2 text-xs text-white bg-gray-800 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        CV
+                        </span>
+                    </a>
+                    </div>
+
+
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-1">
+        <!-- Hero Section -->
+        <section class="border-b" style="border-color: var(--border); background: linear-gradient(to bottom right, #eff6ff, white);">
+            <div class="container mx-auto px-4 py-16">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="shrink-0">
+                        <img src="assets/ava.png" 
+                             alt="Profile" 
+                             class="w-48 h-48 rounded-full object-cover shadow-lg"
+                             style="border: 4px solid rgba(0, 0, 0, 0.1); box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);">
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <h1 class="text-4xl font-bold">Loc Cao</h1>
+                        <h2 class="text-xl mt-2" style="color: var(--muted-foreground); font-weight: 400;">Undergraduate Student at VNUHCM - University of Science</h2>
+                        <p class="mt-4 max-w-2xl">
+                            Researcher specializing in <b>Explainable AI</b>, <b>Computer Vision</b> and <b>Medical Imaging</b>.<br>
+                            Passionate about developing trustworthy AI systems that empower and enhance clinical decision-making.
+                        </p>
+                        <div class="flex gap-3 mt-6 justify-center md:justify-start">
+                            <a href="mailto:chloc22@clc.fitus.edu.vn" 
+                            class="btn btn-primary inline-flex items-center">
+                            <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                            Contact Me
+                            </a>
+
+                            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" 
+                            class="btn btn-outline inline-flex items-center">
+                            <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
+                            Download CV
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center gap-3 mb-8">
+                <div class="icon-bg flex items-center justify-center rounded-full p-3" style="background: rgba(37, 99, 235, 0.1);">
+                    <i data-lucide="user" class="w-10 h-10" style="color: var(--primary);"></i>
+                </div>
+                <h2 class="mt-4 text-3xl font-bold text-gray-900 tracking-tight">About me</h2>
+                </div>
+            </div>
+            
+                <div class="card p-6 hover:shadow-lg transition-shadow mt-6" style="border-left: 4px solid rgba(37, 99, 235, 0.2);">
+                    <div class="prose max-w-none">
+                    <p>
+                    Hi! I am currently pursuing my Bachelor's degree in 
+                    Information Technology – Data Science at 
+                    <a href="https://en.hcmus.edu.vn/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 transition-colors duration-200">
+                        Vietnam National University, Ho Chi Minh (VNUHCM) - University of Science
+                    </a>, advised by Prof. <a href="https://scholar.google.com.vn/citations?user=UA_83MUAAAAJ" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            class="text-blue-600 hover:text-blue-800 transition-colors duration-200">
+                                            Bac Le
+                                            </a>
+                    </p>
+                    <h3 class="mt-4 mb-2 text-xl font-semibold text-gray-900">Research Interests:</h3>
+
+                    <ul class="list-disc list-inside space-y-2 text-justify">
+                    <li>
+                        <strong>Explainable AI (XAI):</strong> Interpret black-box neural networks through 
+                        human-understandable explanations and develop visualization tools.
+                    </li>
+                    <li>
+                        <strong>Trustworthy LLM Reasoning:</strong> Enhance LLM inference reliability through 
+                        multi-agent debating and human-in-the-loop reasoning, aiming to reduce bias and hallucination 
+                        in domains such as legal, healthcare, and recruitment.
+                    </li>
+                    <li>
+                        <strong>Medical Image Analysis:</strong> Explore weakly-supervised medical image segmentation 
+                        techniques, including scribble-supervised learning and prompt-adaptive fine-tuning of foundation 
+                        models (e.g., Segment Anything Model) to enhance generalization and annotation efficiency in 
+                        medical imaging tasks.
+                    </li>
+                    <li>
+                        <strong>AI in Healthcare:</strong> Focus on human-centered and effective depression analysis 
+                        from clinical interviews using multimodal signals (text transcripts, speech/audio) to assist 
+                        clinicians with screening, triage, and decision support while emphasizing privacy, fairness, 
+                        and interpretability.
+                    </li>
+                    </ul>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="py-16" style="background: var(--muted);">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center gap-3 mb-8">
+                <div class="icon-bg flex items-center justify-center rounded-full p-3" style="background: rgba(37, 99, 235, 0.1);">
+                    <i data-lucide="graduation-cap" class="w-10 h-10" style="color: var(--primary);"></i>
+                </div>
+                <h2 class="mt-4 text-3xl font-bold text-gray-900 tracking-tight">Education</h2>
+                </div>
+                <div class="space-y-4">
+                           
+                    <!-- BS -->
+                    <div class="card p-6 hover:shadow-lg transition-shadow" style="border-left: 4px solid rgba(37, 99, 235, 0.2);">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+                            <div class="flex-1">
+                                <h3>Bachelor of Science in Information Technology - Data Science</h3>
+                                <p class="mt-1" style="color: var(--muted-foreground);">VNUHCM - University of Science, Ho Chi Minh, Vietnam</p>
+                                <p style="color: var(--muted-foreground);"><strong>Thesis:</strong> XAI for depression detection via LLM Reasoning</p>
+                            </div>
+                            <div class="shrink-0" style="color: var(--muted-foreground);">09/2022 - 09/2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="icon-bg" style="background: rgba(37, 99, 235, 0.1);">
+                        <i data-lucide="briefcase" class="w-8 h-8" style="color: var(--primary);"></i>
+                    </div>
+                    <h2 class="mt-4 text-3xl font-bold text-gray-900 tracking-tight">Experience</h2>
+                </div>
+                <div class="space-y-4">
+                    
+                    <!-- Research Assistant -->
+                    <div class="card p-6 hover:shadow-lg transition-shadow">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
+                            <div>
+                                <h3 style="color: var(--primary);">Research Assistant</h3>
+                                <p class="mt-1" style="color: var(--muted-foreground);">AIMA Research Lab - AI VIETNAM, Vietnam</p>
+                            </div>
+                            <span class="badge badge-secondary w-fit">06/2025 - now</span>
+                        </div>
+                        <p class="mb-3">Conducted research on Scribbe-supervised Medical Image Segmentation</p>
+                        <ul class="list-disc list-inside space-y-1" style="color: var(--muted-foreground);">
+                            <li>Published paper at ICEFM 2025</li>
+                            <li>Conducted literature review, identified research gaps, proposed novel methods, implemented experiments, and wrote manuscripts submitted to conferences in AI and Medical Imaging</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Research Intern -->
+                    <div class="card p-6 hover:shadow-lg transition-shadow">
+                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
+                            <div>
+                                <h3 style="color: var(--primary);">AI Research Intern</h3>
+                                <p class="mt-1" style="color: var(--muted-foreground);">FPT Quy Nhon AI Center, Gia Lai, Vietnam</p>
+                            </div>
+                            <span class="badge badge-secondary w-fit">Summer 2025</span>
+                        </div>
+                        <p class="mb-3">Conducted research on XAI and Human-in-the-loop</p>
+                        <ul class="list-disc list-inside space-y-1" style="color: var(--muted-foreground);">
+                            <li>Published paper at ICEFM 2025</li>
+                            <li>Developed an LLM-based multilingual interview training system focusing on transparent and user-correctable AI interactions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section class="py-16" style="background: var(--muted);">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="icon-bg" style="background: rgba(37, 99, 235, 0.1);">
+                        <i data-lucide="book-open" class="w-8 h-8" style="color: var(--primary);"></i>
+                    </div>
+                    <h2 class="mt-4 text-3xl font-bold text-gray-900 tracking-tight">Publications</h2>
+                </div>
+               
+                
+                <!-- All Publications -->
+                <div id="all" class="tab-content active space-y-4">
+                    <!-- Publication 1 -->
+                    <div class="card overflow-hidden">
+                        <div class="flex flex-col md:flex-row">
+                        <div class="md:w-64 w-full shrink-0 flex justify-center items-center">
+                        <img 
+                            src="assets/siminterview.png" 
+                            alt="SimInterview" 
+                            class="w-full h-auto max-h-64 md:max-h-80 object-contain rounded-lg shadow-md"
+                        >
+                        </div>
+                            <div class="p-6 flex-1">
+                                  <h2 class="mb-2 text-2xl font-semibold text-gray-900 leading-snug">SimInterview: Transforming Business Education Through LLM-Based Simulated Multilingual Interview Training System</h2>
+                                <p class="mb-2" style="color: var(--muted-foreground);">Truong Thanh Hung Nguyen*, Tran Diem Quynh Nguyen*, <strong>Loc Cao</strong>, Thi Cam Thanh Tran, Thi Cam Mai Truong, Hung Cao</p>
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="badge badge-secondary">ICEFM 2025</span>
+                                </div>
+                                <p class="mb-4" style="color: var(--muted-foreground);">We present SimInterview, an LLM-based multilingual interview simulator that personalizes interviews via RAG, multimodal AI (speech, voice, avatar), and a contestable AI design for explainable and bias-aware interaction.</p>
+                                <div class="flex gap-2 flex-wrap">
+                                    <a href="https://arxiv.org/pdf/2508.11873" target="_blank" rel="noopener noreferrer" 
+                                    class="btn btn-outline text-sm inline-flex items-center">
+                                    Paper
+                                    <i data-lucide="external-link" class="w-3 h-3 ml-2"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Publication 2 -->
+                    <!-- <div class="card overflow-hidden">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-64 shrink-0">
+                                <img src="https://images.unsplash.com/photo-1501621667575-af81f1f0bacc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" 
+                                     alt="Paper" 
+                                     class="w-full h-48 md:h-full object-cover">
+                            </div>
+                            <div class="p-6 flex-1">
+                                <h3 class="mb-2">Novel Architectures for Computer Vision</h3>
+                                <p class="mb-2" style="color: var(--muted-foreground);">Your Name, Mentor</p>
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span class="badge badge-outline">CVPR 2021</span>
+                                    <span class="badge badge-secondary">2021</span>
+                                </div>
+                                <p class="mb-4" style="color: var(--muted-foreground);">We introduce new architectural components for computer vision tasks...</p>
+                                <div class="flex gap-2 flex-wrap">
+                                    <a href="https://arxiv.org/pdf/2508.11873" target="_blank" rel="noopener noreferrer" 
+                                    class="btn btn-outline text-sm inline-flex items-center">
+                                    Paper
+                                    <i data-lucide="external-link" class="w-3 h-3 ml-2"></i>
+                                    </a>
+
+                                    <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer" 
+                                    class="btn btn-outline text-sm inline-flex items-center ml-2">
+                                    Code
+                                    <i data-lucide="external-link" class="w-3 h-3 ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t" style="border-color: var(--border); background: var(--muted);">
+        <div class="container mx-auto px-4 py-12">
+
+            
+            <div class="text-center" style="color: var(--muted-foreground);">
+                <p>© <span id="year"></span> Loc Cao. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Tab switching functionality
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all triggers
+            document.querySelectorAll('.tab-trigger').forEach(trigger => {
+                trigger.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked trigger
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
