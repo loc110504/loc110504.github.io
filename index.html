@@ -16,7 +16,7 @@
             --primary: #2563eb;
             --primary-hover: #1d4ed8;
             --muted: #f1f5f9;
-            --muted-foreground: #64748b;
+            --muted-foreground: #000813;
             --border: rgba(0, 0, 0, 0.1);
         }
         
@@ -25,7 +25,7 @@
         }
         
         h1 {
-            font-size: 1.875rem;
+            font-size: 01.875rem;
             font-weight: 500;
             line-height: 1.5;
         }
@@ -149,7 +149,7 @@
     <header class="border-b sticky top-0 z-50 bg-white shadow-sm" style="border-color: var(--border);">
         <div class="container mx-auto px-4 py-4">
             <nav class="flex items-center justify-between">
-                <h1 class="font-bold text-3xl" style="color: #f40c0cdb;">Loc Cao's Homepage</h1>
+                <h1 class="font-bold text-3xl" style="color: #16adf3db;">Loc Cao's Homepage</h1>
                     <div class="flex items-center gap-3">
                     <!-- Email -->
                     <a href="mailto:chloc22@clc.fitus.edu.vn" target="_blank" rel="noopener noreferrer"
@@ -166,6 +166,16 @@
                         <i data-lucide="graduation-cap" class="w-5 h-5" style="color: #4285F4;"></i>
                         <span class="absolute top-10 left-1/2 -translate-x-1/2 text-xs text-white bg-gray-800 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                         Scholar
+                        </span>
+                    </a>
+ 
+                    <!-- Research Gate -->
+                    <a href="https://www.researchgate.net/profile/Hoang-Loc-Cao?ev=prf_overview" target="_blank" rel="noopener noreferrer"
+                        class="relative group btn btn-icon rounded-full">
+                        <i data-lucide="book-open" class="w-5 h-5 text-gray-600" style="color: #00ccbb;"></i>
+                        <span
+                            class="absolute top-10 left-1/2 -translate-x-1/2 text-xs text-white bg-gray-800 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                            ResearchGate
                         </span>
                     </a>
 
@@ -242,10 +252,10 @@
         <section class="py-16">
         <div class="container mx-auto px-4">
             <div class="flex items-center gap-3 mb-8">
-            <div class="icon-bg flex items-center justify-center rounded-full p-3" style="background: rgba(37, 99, 235, 0.1);">
-                <i data-lucide="user" class="w-10 h-10" style="color: var(--primary);"></i>
+            <div class="flex items-center justify-center rounded-full p-3 bg-blue-50">
+            <i data-lucide="user" class="w-8 h-8 text-blue-600"></i>
             </div>
-            <h2 class="mt-4 text-3xl font-bold text-gray-900 tracking-tight">About me</h2>
+            <h2 class="text-3xl font-bold text-gray-900 tracking-tight">About Me</h2>
             </div>
 
             <!-- ĐÃ ĐƯA VÀO TRONG CONTAINER -->
@@ -283,7 +293,7 @@
                 <div class="icon-bg flex items-center justify-center rounded-full p-3" style="background: rgba(37, 99, 235, 0.1);">
                     <i data-lucide="graduation-cap" class="w-10 h-10" style="color: var(--primary);"></i>
                 </div>
-                <h2 class="mt-4 text-3xl font-bold text-gray-900 tracking-tight">Education</h2>
+                <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Education</h2>
                 </div>
                 <div class="space-y-4">
                            
@@ -291,11 +301,12 @@
                     <div class="card p-6 hover:shadow-lg transition-shadow" style="border-left: 4px solid rgba(37, 99, 235, 0.2);">
                         <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
                             <div class="flex-1">
-                                <h3>Bachelor of Science in Information Technology - Data Science</h3>
-                                <p class="mt-1" style="color: var(--muted-foreground);">VNUHCM - University of Science, Ho Chi Minh, Vietnam</p>
+                                <h3 style="color: var(--primary);">B.Sc. in Information Technology - Data Science</h3>
+                                <p class="mt-1" style="color: var(--muted-foreground);">VNUHCM - University of Science, Vietnam</p>
                                 <p style="color: var(--muted-foreground);"><strong>Thesis:</strong> XAI for depression detection via LLM Reasoning</p>
                             </div>
-                            <div class="shrink-0" style="color: var(--muted-foreground);">09/2022 - 09/2026</div>
+
+                            <span class="badge badge-secondary w-fit">09/2022 - 09/2026</span>
                         </div>
                     </div>
                 </div>
@@ -309,7 +320,7 @@
                     <div class="icon-bg" style="background: rgba(37, 99, 235, 0.1);">
                         <i data-lucide="briefcase" class="w-8 h-8" style="color: var(--primary);"></i>
                     </div>
-                    <h2 class="mt-4 text-3xl font-bold text-gray-900 tracking-tight">Experience</h2>
+                    <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Experience</h2>
                 </div>
                 <div class="space-y-4">
                     
@@ -334,14 +345,15 @@
                         <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
                             <div>
                                 <h3 style="color: var(--primary);">AI Research Intern</h3>
-                                <p class="mt-1" style="color: var(--muted-foreground);">FPT Quy Nhon AI Center, Gia Lai, Vietnam</p>
+                                <p class="mt-1" style="color: var(--muted-foreground);">Quy Nhon AI Center - FPT Software, Gia Lai, Vietnam</p>
                             </div>
-                            <span class="badge badge-secondary w-fit">Summer 2025</span>
+                            <span class="badge badge-secondary w-fit">05/2025 - 08/2025</span>
                         </div>
-                        <p class="mb-3">Conducted research on XAI and Human-in-the-loop</p>
                         <ul class="list-disc list-inside space-y-1" style="color: var(--muted-foreground);">
-                            <li>Published paper at ICEFM 2025</li>
+                            <li>Conducted research on XAI and Trustworthy LLM Systems</li>
                             <li>Developed an LLM-based multilingual interview training system focusing on transparent and user-correctable AI interactions</li>
+                            <li>Co-authored a paper accepted at ICEFM 2025</li>
+
                         </ul>
                     </div>
                 </div>
@@ -355,7 +367,7 @@
                     <div class="icon-bg" style="background: rgba(37, 99, 235, 0.1);">
                         <i data-lucide="book-open" class="w-8 h-8" style="color: var(--primary);"></i>
                     </div>
-                    <h2 class="mt-4 text-3xl font-bold text-gray-900 tracking-tight">Publications</h2>
+                    <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Publications</h2>
                 </div>
                
                 
@@ -373,11 +385,10 @@
                         </div>
                             <div class="p-6 flex-1">
                                   <h2 class="mb-2 text-2xl font-semibold text-gray-900 leading-snug">SimInterview: Transforming Business Education Through LLM-Based Simulated Multilingual Interview Training System</h2>
-                                <p class="mb-2" style="color: var(--muted-foreground);">Truong Thanh Hung Nguyen*, Tran Diem Quynh Nguyen*, <strong>Loc Cao</strong>, Thi Cam Thanh Tran, Thi Cam Mai Truong, Hung Cao</p>
+                                <p class="mb-2" style="color: var(--muted-foreground);">Truong Thanh Hung Nguyen*, Tran Diem Quynh Nguyen*, <strong>Hoang Loc Cao</strong>, Thi Cam Thanh Tran, Thi Cam Mai Truong, Hung Cao</p>
                                 <div class="flex items-center gap-2 mb-3">
                                     <span class="badge badge-secondary">ICEFM 2025</span>
                                 </div>
-                                <p class="mb-4" style="color: var(--muted-foreground);">We present SimInterview, an LLM-based multilingual interview simulator that personalizes interviews via RAG, multimodal AI (speech, voice, avatar), and a contestable AI design for explainable and bias-aware interaction.</p>
                                 <div class="flex gap-2 flex-wrap">
                                     <a href="https://arxiv.org/pdf/2508.11873" target="_blank" rel="noopener noreferrer" 
                                     class="btn btn-outline text-sm inline-flex items-center">
