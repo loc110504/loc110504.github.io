@@ -1,448 +1,680 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loc Cao | Homepage</title>
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --muted: #f1f5f9;
-            --muted-foreground: #000813;
-            --border: rgba(0, 0, 0, 0.1);
+<html lang="en" data-qb-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Loc Cao</title>
+  
+  <meta name="author" content="Hoang-Loc Cao">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="icon" type="image/png" href="images/favicon.ico">
+  <script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script><script type="text/javascript" src="https://clustrmaps.com/bl/scripts/counter.js" data-id="2220388"></script><style id="monica-reading-highlight-style">
+        .monica-reading-highlight {
+          animation: fadeInOut 1.5s ease-in-out;
         }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-            scroll-behavior: smooth;
+
+        @keyframes fadeInOut {
+          0%, 100% { background-color: transparent; }
+          30%, 70% { background-color: rgba(2, 118, 255, 0.20); }
         }
-        
-        h1 {
-            font-size: 01.875rem;
-            font-weight: 500;
-            line-height: 1.5;
-        }
-        
-        h2 {
-            font-size: 1.875rem;
-            font-weight: 700;
-            line-height: 1.3;
-        }
-        
-        h3 {
-            font-size: 1.125rem;
-            font-weight: 500;
-            line-height: 1.5;
-        }
-        
-        .card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 0.625rem;
-        }
-        
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.25rem 0.75rem;
-            border-radius: 0.375rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-        
-        .badge-outline {
-            border: 1px solid var(--border);
-            background: transparent;
-        }
-        
-        .badge-secondary {
-            background: var(--muted);
-            color: #1e3a8a;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            font-weight: 500;
-            transition: all 0.2s;
-            cursor: pointer;
-            border: none;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary-hover);
-        }
-        
-        .btn-outline {
-            border: 1px solid var(--border);
-            background: white;
-            color: #030213;
-        }
-        
-        .btn-outline:hover {
-            background: var(--muted);
-        }
-        
-        .btn-icon {
-            padding: 0.5rem;
-            background: transparent;
-        }
-        
-        .btn-icon:hover {
-            background: var(--muted);
-        }
-        
-        .nav-link {
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-            background: transparent;
-            border: none;
-            color: #030213;
-            text-decoration: none;
-        }
-        
-        .nav-link:hover {
-            background: var(--muted);
-        }
-        
-        .tab-list {
-            display: inline-flex;
-            background: var(--muted);
-            border-radius: 0.375rem;
-            padding: 0.25rem;
-        }
-        
-        .tab-trigger {
-            padding: 0.5rem 1rem;
-            border-radius: 0.25rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-            background: transparent;
-            border: none;
-        }
-        
-        .tab-trigger.active {
-            background: white;
-            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        .icon-bg {
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-            display: inline-flex;
-        }
-    </style>
-</head>
-<body class="min-h-screen flex flex-col bg-white">
-    <!-- Header -->
-    <header class="border-b sticky top-0 z-50 bg-white shadow-sm" style="border-color: var(--border);">
-        <div class="container mx-auto px-4 py-4">
-            <nav class="flex items-center justify-between">
-                <h1 class="font-bold text-3xl" style="color: #16adf3db;">Loc Cao's Homepage 🏐</h1>
-                <div class="flex items-center gap-2">
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#education" class="nav-link">Education</a>
-                    <a href="#experience" class="nav-link">Experience</a>
-                    <a href="#publications" class="nav-link">Publications</a>
-                </div>
-            </nav>
+      </style><style type="text/css">.lf-progress {
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  width: 100%;
+  /* margin: 0 10px; */
+  height: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.lf-progress:focus {
+  outline: none;
+  border: none;
+}
+.lf-progress::-moz-range-track {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+.lf-progress::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-moz-range-thumb {
+  -moz-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.lf-progress::-ms-fill-lower {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-fill-upper {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-thumb {
+  border: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress:focus::-ms-fill-lower {
+  background: #ccc;
+}
+.lf-progress:focus::-ms-fill-upper {
+  background: #ccc;
+}
+.lf-player-container :focus {
+  outline: 0;
+}
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-player-btn-container {
+  display: flex;
+  align-items: center;
+}
+.lf-player-btn {
+  cursor: pointer;
+  fill: #999;
+  width: 14px;
+}
+
+.lf-player-btn.active {
+  fill: #555;
+}
+
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  background-color: #ffffff;
+  opacity: 1;
+
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  padding: 10px;
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-arrow {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  bottom: -9px;
+  border-style: solid;
+  border-width: 10px 10px 0px 10px;
+}
+
+.lf-left-align,
+.lf-left-align .lfarrow {
+  left: 0;
+  right: unset;
+}
+
+.lf-right-align,
+.lf-right-align .lf-arrow {
+  right: 0;
+  left: unset;
+}
+
+.lf-text-input {
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  padding: 3px;
+  width: 60px;
+  margin: 0;
+}
+
+.lf-color-picker {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90px;
+}
+
+.lf-color-selectors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lf-color-component {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.lf-color-component strong {
+  width: 40px;
+}
+
+.lf-color-component input[type='range'] {
+  margin: 0 0 0 10px;
+}
+
+.lf-color-component input[type='number'] {
+  width: 50px;
+  margin: 0 0 0 10px;
+}
+
+.lf-color-preview {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5px;
+}
+
+.lf-preview {
+  height: 60px;
+  width: 60px;
+}
+
+.lf-popover-snapshot {
+  width: 150px;
+}
+.lf-popover-snapshot h5 {
+  margin: 5px 0 10px 0;
+  font-size: 0.75rem;
+}
+.lf-popover-snapshot a {
+  display: block;
+  text-decoration: none;
+}
+.lf-popover-snapshot a:before {
+  content: '⥼';
+  margin-right: 5px;
+}
+.lf-popover-snapshot .lf-note {
+  display: block;
+  margin-top: 10px;
+  color: #999;
+}
+.lf-player-controls > div {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.lf-player-controls > div:first-child {
+  margin-left: 0px;
+}
+.lf-player-controls > div:last-child {
+  margin-right: 0px;
+}
+</style><style type="text/css">.lf-progress {
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  width: 100%;
+  /* margin: 0 10px; */
+  height: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.lf-progress:focus {
+  outline: none;
+  border: none;
+}
+.lf-progress::-moz-range-track {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+.lf-progress::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-moz-range-thumb {
+  -moz-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.lf-progress::-ms-fill-lower {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-fill-upper {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-thumb {
+  border: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress:focus::-ms-fill-lower {
+  background: #ccc;
+}
+.lf-progress:focus::-ms-fill-upper {
+  background: #ccc;
+}
+.lf-player-container :focus {
+  outline: 0;
+}
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-player-btn-container {
+  display: flex;
+  align-items: center;
+}
+.lf-player-btn {
+  cursor: pointer;
+  fill: #999;
+  width: 14px;
+}
+
+.lf-player-btn.active {
+  fill: #555;
+}
+
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  background-color: #ffffff;
+  opacity: 1;
+
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  padding: 10px;
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-arrow {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  bottom: -9px;
+  border-style: solid;
+  border-width: 10px 10px 0px 10px;
+}
+
+.lf-left-align,
+.lf-left-align .lfarrow {
+  left: 0;
+  right: unset;
+}
+
+.lf-right-align,
+.lf-right-align .lf-arrow {
+  right: 0;
+  left: unset;
+}
+
+.lf-text-input {
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  padding: 3px;
+  width: 60px;
+  margin: 0;
+}
+
+.lf-color-picker {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90px;
+}
+
+.lf-color-selectors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lf-color-component {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.lf-color-component strong {
+  width: 40px;
+}
+
+.lf-color-component input[type='range'] {
+  margin: 0 0 0 10px;
+}
+
+.lf-color-component input[type='number'] {
+  width: 50px;
+  margin: 0 0 0 10px;
+}
+
+.lf-color-preview {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5px;
+}
+
+.lf-preview {
+  height: 60px;
+  width: 60px;
+}
+
+.lf-popover-snapshot {
+  width: 150px;
+}
+.lf-popover-snapshot h5 {
+  margin: 5px 0 10px 0;
+  font-size: 0.75rem;
+}
+.lf-popover-snapshot a {
+  display: block;
+  text-decoration: none;
+}
+.lf-popover-snapshot a:before {
+  content: '⥼';
+  margin-right: 5px;
+}
+.lf-popover-snapshot .lf-note {
+  display: block;
+  margin-top: 10px;
+  color: #999;
+}
+.lf-player-controls > div {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.lf-player-controls > div:first-child {
+  margin-left: 0px;
+}
+.lf-player-controls > div:last-child {
+  margin-right: 0px;
+}
+</style></head>
+
+<body monica-id="ofpnmcalabcbjgholdjcjblkibolbppb" monica-version="7.9.8" cz-shortcut-listen="true">
+  <table class="container-table"><tbody>
+    <tr class="no-padding">
+      <td class="no-padding">
+        <table class="full-width-table"><tbody>
+          <tr class="no-padding">
+            <td class="profile-content">
+              <p class="centered-text" style="color: #de1d1d; ">
+                <name><b>Hoang-Loc Cao</b></name>
+              </p>
+              <p>👋 Hi! I'm <strong>Hoang-Loc Cao</strong>, currently pursuing my Bachelor's Degree in Data Science at <a href="https://en.hcmus.edu.vn/">VNUHCM - University of Science</a>, advised by <a href="https://scholar.google.com.vn/citations?user=UA_83MUAAAAJ">Prof. Bac Le</a>.<br>
+                🔍 My research interests focus on 
+                <span style="color: #cc0000; font-weight: bold;">AI in Healthcare</span>, at the intersection of <strong>Medical Image Analysis</strong> and <strong>Explainable AI</strong>. <br>
+
+
+		    
+              <p class="centered-text">
+                <a href="data/CV.pdf">CV</a> &nbsp;/&nbsp;
+                <a href="https://scholar.google.com/citations?user=szHDzgkAAAAJ&amp;hl">Google Scholar</a> &nbsp;/&nbsp;
+		<a href="https://www.researchgate.net/profile/Hoang-Loc-Cao">ResearchGate</a> &nbsp;/&nbsp;
+                <a href="https://github.com/loc110504/">Github</a> &nbsp;/&nbsp;
+				  <a href="https://www.linkedin.com/in/loccao1105/">LinkedIn</a> &nbsp;&nbsp;
+              </p>
+		    
+            </td>
+            <td class="profile-image">
+              <a href="images/ava.png"><img style="width:100%;max-width:100%" alt="profile photo" src="images/ava.png" class="hoverZoomLink"></a>
+            </td>
+          </tr>
+        </tbody></table>
+	      
+       
+<heading id="publications"><b>Publications</b></heading>
+<table class="full-width-table publications-table">
+  <tbody>
+
+    <!-- Paper 1 -->
+    <tr class="paper-row" onmouseout="hypernerf_stop()" onmouseover="hypernerf_start()">
+      <td class="paper-image-cell">
+        <img src="images/sdtnet.png" alt="SDTNet" class="paper-thumb">
+      </td>
+      <td class="paper-content-cell">
+          <span class="paper-title">
+            Scribble-Supervised Medical Image Segmentation with Dynamic Teacher Switching and Hierarchical Consistency
+          </span>
+        <div class="paper-authors">
+          Thanh-Huy Nguyen*, <strong>Hoang-Loc Cao</strong>*, Dat T. Chung, Mai-Anh Vu, Thanh-Minh Nguyen,
+          Minh Le, Phat K. Huynh, Ulas Bagci
         </div>
-    </header>
-
-    <main class="flex-1">
-        <!-- Hero Section -->
-        <section class="border-b" style="border-color: var(--border); background: linear-gradient(to bottom right, #eff6ff, white);">
-            <div class="container mx-auto px-4 py-16">
-                <div class="flex flex-col md:flex-row items-center gap-8">
-                    <div class="shrink-0">
-                        <img src="assets/ava.png" 
-                             alt="Profile" 
-                             class="w-48 h-48 rounded-full object-cover shadow-lg"
-                             style="border: 4px solid rgba(0, 0, 0, 0.1); box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);">
-                    </div>
-                    <div class="flex-1 text-center md:text-left">
-                        <h1 class="text-4xl font-bold">Hoang-Loc Cao</h1>
-                        <h2 class="text-xl mt-2" style="color: var(--muted-foreground); font-weight: 400;">Undergraduate Student at VNUHCM - University of Science</h2>
-                        <div class="flex gap-3 mt-6 justify-center md:justify-start">
-                            <!-- Email -->
-                            <a href="mailto:chloc22@clc.fitus.edu.vn" target="_blank" rel="noopener noreferrer"
-                                class="relative group btn btn-icon rounded-full">
-                                <i data-lucide="mail" class="w-7 h-7 text-gray-600"></i>
-                                <span class="absolute top-12 left-1/2 -translate-x-1/2 text-xs text-white bg-gray-800 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
-                                Email
-                                </span>
-                            </a>
-
-                            <!-- Google Scholar -->
-                            <a href="https://scholar.google.com/citations?user=szHDzgkAAAAJ" target="_blank" rel="noopener noreferrer"
-                                class="relative group btn btn-icon rounded-full">
-                                <i data-lucide="graduation-cap" class="w-7 h-7" style="color: #4285F4;"></i>
-                                <span class="absolute top-12 left-1/2 -translate-x-1/2 text-xs text-white bg-gray-800 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
-                                GoogleScholar
-                                </span>
-                            </a>
-     
-                            <!-- Research Gate -->
-                            <a href="https://www.researchgate.net/profile/Hoang-Loc-Cao?ev=prf_overview" target="_blank" rel="noopener noreferrer"
-                                class="relative group btn btn-icon rounded-full">
-                                <i data-lucide="book-open" class="w-7 h-7 text-gray-600" style="color: #00ccbb;"></i>
-                                <span class="absolute top-12 left-1/2 -translate-x-1/2 text-xs text-white bg-gray-800 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
-                                    ResearchGate
-                                </span>
-                            </a>
-
-                            <!-- GitHub -->
-                            <a href="https://github.com/loc110504" target="_blank" rel="noopener noreferrer"
-                                class="relative group btn btn-icon rounded-full">
-                                <i data-lucide="github" class="w-7 h-7" style="color: #000000;"></i>
-                                <span class="absolute top-12 left-1/2 -translate-x-1/2 text-xs text-white bg-gray-800 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
-                                GitHub
-                                </span>
-                            </a>
-
-                            <!-- LinkedIn -->
-                            <a href="https://linkedin.com/in/loccao1105" target="_blank" rel="noopener noreferrer"
-                                class="relative group btn btn-icon rounded-full">
-                                <i data-lucide="linkedin" class="w-7 h-7" style="color: #0A66C2;"></i>
-                                <span class="absolute top-12 left-1/2 -translate-x-1/2 text-xs text-white bg-gray-800 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
-                                LinkedIn
-                                </span>
-                            </a>
-
-                            <!-- CV -->
-                            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"
-                                class="relative group btn btn-icon rounded-full">
-                                <i data-lucide="file-text" class="w-7 h-7 text-gray-600" style="color: #e21010;"></i>
-                                <span class="absolute top-12 left-1/2 -translate-x-1/2 text-xs text-white bg-gray-800 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
-                                CV
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-16">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center gap-3 mb-8">
-            <div class="flex items-center justify-center rounded-full p-3 bg-blue-50">
-            <i data-lucide="user" class="w-8 h-8 text-blue-600"></i>
-            </div>
-            <h2 class="text-3xl font-bold text-gray-900 tracking-tight">About me</h2>
-            </div>
-
-            <div class="card p-6 hover:shadow-lg transition-shadow mt-6"
-                style="border-left: 4px solid rgba(37, 99, 235, 0.2);">
-            <div class="prose max-w-none">
-            <p>
-            I'm currently pursuing my Bachelor's degree in Information Technology – Data Science at 
-            <a href="https://en.hcmus.edu.vn/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 transition-colors duration-200">
-                Vietnam National University, Ho Chi Minh City (VNUHCM) - University of Science
-            </a>, supervised by
-            <a href="https://scholar.google.com.vn/citations?user=UA_83MUAAAAJ" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 transition-colors duration-200">
-                Prof. Bac Le
-            </a>
-            </p>
-
-            <p><b>Research areas:</b></p>
-                <ul class="list-disc list-inside space-y-2 text-justify">
-                <li><strong>Explainable and Trustworthy AI:</strong> Develop interpretable models and visualization tools to reveal the decision-making process of black-box neural networks, enhance LLM reasoning reliability through multi-agent collaboration/argumentation and human-in-the-loop.</li>
-                <li><strong>Medical Image Analysis:</strong> Focus on weakly-supervised methods using scribble annotations and foundation models (e.g., Segment Anything Model) for efficient medical data segmentation under imperfect data scenarios.</li>
-                <li><strong>AI for Healthcare and Well-being:</strong> Design human-centered AI systems for multimodal emotion and depression analysis (text, audio, voice, facial expression, etc.), aiming to support clinical decision-making.</li>
-                </ul>
-            </div>
-            </div>
+        <div class="paper-venue">
+          <em><a href="https://biomedicalimaging.org/2026/"><strong>ISBI'26</strong> - IEEE International Symposium on Biomedical Imaging</a></em> (Under Review)
         </div>
-        </section>
-
-
-        <!-- Education Section -->
-        <section id="education" class="py-16" style="background: var(--muted);">
-            <div class="container mx-auto px-4">
-                <div class="flex items-center gap-3 mb-8">
-                <div class="icon-bg flex items-center justify-center rounded-full p-3" style="background: rgba(37, 99, 235, 0.1);">
-                    <i data-lucide="graduation-cap" class="w-10 h-10" style="color: var(--primary);"></i>
-                </div>
-                <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Education</h2>
-                </div>
-                <div class="space-y-4">
-                           
-                    <!-- BS -->
-                    <div class="card p-6 hover:shadow-lg transition-shadow" style="border-left: 4px solid rgba(37, 99, 235, 0.2);">
-                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
-                            <div class="flex-1">
-                                <h3 style="color: var(--primary);">B.Sc. in Information Technology (Major in Data Science)</h3>
-                                <p class="mt-1" style="color: var(--muted-foreground);">VNUHCM - University of Science, Ho Chi Minh City, Vietnam</p>
-                            </div>
-
-                            <span class="badge badge-secondary w-fit">09/2022 - 09/2026</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="py-16">
-            <div class="container mx-auto px-4">
-                <div class="flex items-center gap-3 mb-8">
-                    <div class="icon-bg" style="background: rgba(37, 99, 235, 0.1);">
-                        <i data-lucide="briefcase" class="w-8 h-8" style="color: var(--primary);"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Experience</h2>
-                </div>
-                <div class="space-y-4">
-                    
-                    <!-- Research Assistant -->
-                    <div class="card p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
-                            <div>
-                                <h3 style="color: var(--primary);">Research Assistant</h3>
-                                <p class="mt-1" style="color: var(--muted-foreground);">AIMA Research Lab - AI VIETNAM, Vietnam</p>
-                            </div>
-                            <span class="badge badge-secondary w-fit">06/2025 - now</span>
-                        </div>
-                        <ul class="list-disc list-inside space-y-1" style="color: var(--muted-foreground);">
-                            <li>Conducted research on Weakly-Supervised Medical Image Segmentation</li>
-                            <li>Did literature review, analyzed research gaps, proposed new methods and contributed to manuscripts submitted to conferences in AI and Medical Imaging</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Research Intern -->
-                    <div class="card p-6 hover:shadow-lg transition-shadow">
-                        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
-                            <div>
-                                <h3 style="color: var(--primary);">AI Research Intern</h3>
-                                <p class="mt-1" style="color: var(--muted-foreground);">Quy Nhon AI Center - FPT Software, Gia Lai, Vietnam</p>
-                            </div>
-                            <span class="badge badge-secondary w-fit">05/2025 - 08/2025</span>
-                        </div>
-                        <ul class="list-disc list-inside space-y-1" style="color: var(--muted-foreground);">
-                            <li>Conducted research on Explainable AI (XAI) and Large Language Models (LLMs)</li>
-                            <li>Developed a trustworthy LLM-based multilingual interview training system</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Publications Section -->
-        <section id="publications" class="py-16" style="background: var(--muted);">
-            <div class="container mx-auto px-4">
-                <div class="flex items-center gap-3 mb-8">
-                    <div class="icon-bg" style="background: rgba(37, 99, 235, 0.1);">
-                        <i data-lucide="book-open" class="w-8 h-8" style="color: var(--primary);"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Publications</h2>
-                </div>
-               
-        <!-- All Publications -->
-                <div id="all" class="tab-content active space-y-4">
-                    <!-- Publication 1 -->
-                    <div class="card overflow-hidden">
-                        <div class="flex flex-col md:flex-row">
-                        <div class="md:w-64 w-full shrink-0 flex justify-center items-center p-4">
-                            <div class="relative">
-                                <img 
-                                    src="assets/siminterview.png" 
-                                    alt="SimInterview" 
-                                    class="w-full h-auto max-h-64 md:max-h-80 object-contain rounded-lg shadow-md"
-                                >
-                                <div class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 rounded font-medium text-xs">
-                                    ICEFM'25
-                                </div>
-                            </div>
-                        </div>
-                            <div class="p-6 flex-1">
-                                <h3 class="mb-2 text-xl font-semibold text-gray-900 leading-snug">SimInterview: Transforming Business Education Through LLM-Based Simulated Multilingual Interview Training System</h3>
-                                <p class="mb-2 text-l" style="color: var(--muted-foreground);">Truong Thanh Hung Nguyen*, Tran Diem Quynh Nguyen*, <strong>Hoang Loc Cao</strong>, Thi Cam Thanh Tran, Thi Cam Mai Truong, Hung Cao</p>
-                                <p class="mb-3 text-l" style="color: var(--muted-foreground);"> International Conference on Economics, Finance, and Management (<b>ICEFM</b>), 2025</p>
-                                
-                                <div class="flex gap-2 flex-wrap mb-3">
-                                    <a href="https://arxiv.org/pdf/2508.11873" target="_blank" rel="noopener noreferrer" 
-                                    class="btn btn-outline text-sm inline-flex items-center hover:bg-blue-50 hover:border-blue-300 transition-all">
-                                    <i data-lucide="file-text" class="w-4 h-4 mr-1.5"></i>
-                                    Paper
-                                    </a>
-
-                                    <a href="https://github.com/Analytics-Everywhere-Lab/SimInterview" target="_blank" rel="noopener noreferrer" 
-                                    class="btn btn-outline text-sm inline-flex items-center hover:bg-gray-800 hover:text-white transition-all">
-                                    <i data-lucide="github" class="w-4 h-4 mr-1.5"></i>
-                                    Code
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t" style="border-color: var(--border); background: var(--muted);">
-        <div class="container mx-auto px-4 py-12">
-            <div class="text-center" style="color: var(--muted-foreground);">
-                <p>© <span id="year"></span> Loc Cao. All rights reserved.</p>
-            </div>
+        <div class="paper-links">
+          <a href="https://arxiv.org/" class="paper-btn">Paper</a>
+          <a href="https://github.com/loc110504/SDT-Net" class="code-btn">Code</a>
         </div>
-    </footer>
+      </td>
+    </tr>
 
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-        
-        // Set current year
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerOffset = 80;
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    <!-- Paper 2 -->
+    <tr class="paper-row" onmouseout="hypernerf_stop()" onmouseover="hypernerf_start()">
+      <td class="paper-image-cell">
+        <img src="images/aimedhealth26.png" alt="AIMedHealth" class="paper-thumb">
+      </td>
+      <td class="paper-content-cell">
+          <span class="paper-title">
+            Modality-Specific Enhancement and Complementary Fusion for Semi-Supervised Multi-Modal Brain Tumor Segmentation
+          </span>
+        <div class="paper-authors">
+          Dat Tien Chung, Ba-Thinh Lam, Thanh-Huy Nguyen, Thien Nguyen, Nguyen Lan Vi Vu,
+          <strong>Hoang Loc Cao</strong>, Phat Kim Huynh, Min Xu
+        </div>
+        <div class="paper-venue">
+          <em><a href="https://sites.google.com/view/aimedhealth-aaai/home">
+            <strong>AAAI'26</strong> - AI for Medicine and Healthcare Bridge Program
+          </a></em>
+        </div>
+        <div class="paper-links">
+          <a href="https://arxiv.org/" class="paper-btn">Paper</a>
+        </div>
+      </td>
+    </tr>
 
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+      <!-- Paper 3 -->
+    <tr class="paper-row" onmouseout="hypernerf_stop()" onmouseover="hypernerf_start()">
+      <td class="paper-image-cell">
+        <img src="images/siminterview.png" alt="SimInterview" class="paper-thumb">
+      </td>
+      <td class="paper-content-cell">
+
+          <span class="paper-title">
+            SimInterview: Transforming Business Education Through LLM-Based Simulated Multilingual Interview Training System
+          </span>
+      
+        <div class="paper-authors">
+          Truong Thanh Hung Nguyen*, Tran Diem Quynh Nguyen*, <strong>Hoang Loc Cao</strong>, Thi Cam Thanh Tran, Thi Cam Mai Truong, Hung Cao
+        </div>
+        <div class="paper-venue">
+          <em><a href="https://icefm2025.sgu.edu.vn/">
+            <strong>ICEFM'25</strong> - International Conference on Economics, Finance, and Management
+          </a></em>
+        </div>
+        <div class="paper-links">
+          <a href="https://arxiv.org/pdf/2508.11873" class="paper-btn">Paper</a>
+          <a href="https://github.com/loc110504/SimInterview" class="code-btn">Code</a>
+        </div>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+      
+
+<table class="full-width-table">
+  <tbody>
+    <tr>
+      <td class="full-width-cell">
+        <heading id="service"><b>Education</b></heading>
+          <ul style="list-style-type:square;">
+            <li>
+              B.S. in Data Science @ VNUHCM - University of Science, Vietnam
+            </li>
+          </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="full-width-table">
+  <tbody>
+    <tr>
+      <td class="full-width-cell">
+        <heading id="service"><b>Experience</b></heading>
+          <ul style="list-style-type:square;">
+            <li>
+              Research Assistant @ AIMA Research Lab - AI VIETNAM, Vietnam
+            </li>
+            <li>
+                Research Intern @ PASSIO Lab - North Carolina A&T State University, USA
+            </li>
+            <li>
+                AI Research Intern @ Quy Nhon AI Center - FPT Software, Vietnam
+            </li>
+            
+          </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<footer style="
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+    padding: 10px 0;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+">
+    © 2025 Hoang-Loc Cao — Last updated: November 2025  
+</footer
+
+
+
+/*! Bundled license information:
+
+simple-mind-map/dist/simpleMindMap.esm.min.css:
+  (*! Bundled license information:
+  
+  quill/dist/quill.snow.css:
+    (*!
+     * Quill Editor v2.0.2
+     * https://quilljs.com
+     * Copyright (c) 2017-2024, Slab
+     * Copyright (c) 2014, Jason Chen
+     * Copyright (c) 2013, salesforce.com
+     *)
+  *)
+
+cropperjs/dist/cropper.css:
+  (*!
+   * Cropper.js v1.6.2
+   * https://fengyuanchen.github.io/cropperjs
+   *
+   * Copyright 2015-present Chen Fengyuan
+   * Released under the MIT license
+   *
+   * Date: 2024-04-21T07:43:02.731Z
+   *)
+*/
+</style><div><div translate="no" class="_monica-theme-d2f2b383 root-container-UmvGjM markdown-font-size-provider-3KSWBx sidebar-ZRQNut" lang="en"><div class="content-root-WCIiJJ"><div class="page-extra-window--rG3TB" style="right: 0px; left: 0px;"></div><div class="dialog-root-ZbJNQk"></div><div class="artifact-widget-root-g65VNZ"></div><div class="reading-summary-status-bar-yFqhHz"></div><div class="contextual-toolbar-BjPOM3" dir="ltr" style="text-align: left;"></div><div class="window-root-ERNrXd"></div></div></div></div></template></div><div class="jvectormap-tip"></div></body></html>
