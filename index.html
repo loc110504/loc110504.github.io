@@ -1,680 +1,1175 @@
-<html lang="en" data-qb-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <title>Loc Cao</title>
-  
-  <meta name="author" content="Hoang-Loc Cao">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="icon" type="image/png" href="images/favicon.ico">
-  <script type="text/javascript" src="script.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script><script type="text/javascript" src="https://clustrmaps.com/bl/scripts/counter.js" data-id="2220388"></script><style id="monica-reading-highlight-style">
-        .monica-reading-highlight {
-          animation: fadeInOut 1.5s ease-in-out;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/jpeg" href="images/images.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loc Cao @ HCMUS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        @keyframes fadeInOut {
-          0%, 100% { background-color: transparent; }
-          30%, 70% { background-color: rgba(2, 118, 255, 0.20); }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #0533ff 100%);
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
         }
-      </style><style type="text/css">.lf-progress {
-  -webkit-appearance: none;
-  -moz-apperance: none;
-  width: 100%;
-  /* margin: 0 10px; */
-  height: 4px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-.lf-progress:focus {
-  outline: none;
-  border: none;
-}
-.lf-progress::-moz-range-track {
-  cursor: pointer;
-  background: none;
-  border: none;
-  outline: none;
-}
-.lf-progress::-webkit-slider-thumb {
-  -webkit-appearance: none !important;
-  height: 13px;
-  width: 13px;
-  border: 0;
-  border-radius: 50%;
-  background: #0fccce;
-  cursor: pointer;
-}
-.lf-progress::-moz-range-thumb {
-  -moz-appearance: none !important;
-  height: 13px;
-  width: 13px;
-  border: 0;
-  border-radius: 50%;
-  background: #0fccce;
-  cursor: pointer;
-}
-.lf-progress::-ms-track {
-  width: 100%;
-  height: 3px;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  color: transparent;
-}
-.lf-progress::-ms-fill-lower {
-  background: #ccc;
-  border-radius: 3px;
-}
-.lf-progress::-ms-fill-upper {
-  background: #ccc;
-  border-radius: 3px;
-}
-.lf-progress::-ms-thumb {
-  border: 0;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  background: #0fccce;
-  cursor: pointer;
-}
-.lf-progress:focus::-ms-fill-lower {
-  background: #ccc;
-}
-.lf-progress:focus::-ms-fill-upper {
-  background: #ccc;
-}
-.lf-player-container :focus {
-  outline: 0;
-}
-.lf-popover {
-  position: relative;
-}
+         footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #8b8b8b;
+            color: white;
+            text-align: center;
+            padding: 3px 0;
+        }
 
-.lf-popover-content {
-  display: inline-block;
-  position: absolute;
-  opacity: 1;
-  visibility: visible;
-  transform: translate(0, -10px);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
-}
+        .container {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            background: white;
+            overflow: hidden;
+            display: flex;
+        }
 
-.lf-popover-content.hidden {
-  opacity: 0;
-  visibility: hidden;
-  transform: translate(0, 0px);
-}
+        /* Left Sidebar */
+/* Left Sidebar */
 
-.lf-player-btn-container {
-  display: flex;
-  align-items: center;
-}
-.lf-player-btn {
-  cursor: pointer;
-  fill: #999;
-  width: 14px;
-}
+        /* Left Sidebar */
+        /* Left Sidebar */
+        .sidebar {
+            width: 320px;
+            background: linear-gradient(180deg, #f1b375 0%, #e9c2a2 100%);
+            color: rgb(255, 255, 255);
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-y: auto;
+        }
 
-.lf-player-btn.active {
-  fill: #555;
-}
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 180px;
+            /* Thay 'your-image.jpg' bằng đường dẫn ảnh của bạn */
+            background-image: url('images/background.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 0;
+            /* Optional: thêm overlay để text dễ đọc hơn */
+            opacity: 0.9;
+        }
+        
+        /* Optional: thêm overlay tối để text nổi bật hơn */
+        .sidebar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 280px;
+            background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 100%);
+            z-index: 0;
+        }
 
-.lf-popover {
-  position: relative;
-}
+        .profile-section {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
 
-.lf-popover-content {
-  display: inline-block;
-  position: absolute;
-  background-color: #ffffff;
-  opacity: 1;
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 2px solid rgb(0, 0, 0);
+            margin: 0 auto 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
 
-  transform: translate(0, -10px);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
-  padding: 10px;
-}
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.lf-popover-content.hidden {
-  opacity: 0;
-  visibility: hidden;
-  transform: translate(0, 0px);
-}
+        .name {
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #000000;
+        }
 
-.lf-arrow {
-  position: absolute;
-  z-index: -1;
-  content: '';
-  bottom: -9px;
-  border-style: solid;
-  border-width: 10px 10px 0px 10px;
-}
+        .title {
+            font-size: 16px;
+            color: #5a5a5acb;
+            margin-bottom: 15px;
+        }
 
-.lf-left-align,
-.lf-left-align .lfarrow {
-  left: 0;
-  right: unset;
-}
+        .contact-info {
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
 
-.lf-right-align,
-.lf-right-align .lf-arrow {
-  right: 0;
-  left: unset;
-}
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: #000000;
+        }
 
-.lf-text-input {
-  border: 1px #ccc solid;
-  border-radius: 5px;
-  padding: 3px;
-  width: 60px;
-  margin: 0;
-}
+        .contact-item svg {
+            width: 18px;
+            height: 18px;
+            margin-right: 12px;
+            fill: #ff0606;
+        }
 
-.lf-color-picker {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 90px;
-}
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 25px;
+        }
 
-.lf-color-selectors {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(102,126,234,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
 
-.lf-color-component {
-  display: flex;
-  flex-direction: row;
-  font-size: 12px;
-  align-items: center;
-  justify-content: center;
-}
+        .social-links a:hover {
+            background: #667eea;
+            transform: translateY(-3px);
+        }
 
-.lf-color-component strong {
-  width: 40px;
-}
+        .social-links a::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.9);
+            color: rgb(255, 255, 255);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 11px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
 
-.lf-color-component input[type='range'] {
-  margin: 0 0 0 10px;
-}
+        .social-links a:hover::after {
+            opacity: 1;
+        }
 
-.lf-color-component input[type='number'] {
-  width: 50px;
-  margin: 0 0 0 10px;
-}
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+        }
 
-.lf-color-preview {
-  font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 5px;
-}
+        .interests {
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
 
-.lf-preview {
-  height: 60px;
-  width: 60px;
-}
+        .interests h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-.lf-popover-snapshot {
-  width: 150px;
-}
-.lf-popover-snapshot h5 {
-  margin: 5px 0 10px 0;
-  font-size: 0.75rem;
-}
-.lf-popover-snapshot a {
-  display: block;
-  text-decoration: none;
-}
-.lf-popover-snapshot a:before {
-  content: '⥼';
-  margin-right: 5px;
-}
-.lf-popover-snapshot .lf-note {
-  display: block;
-  margin-top: 10px;
-  color: #999;
-}
-.lf-player-controls > div {
-  margin-right: 5px;
-  margin-left: 5px;
-}
-.lf-player-controls > div:first-child {
-  margin-left: 0px;
-}
-.lf-player-controls > div:last-child {
-  margin-right: 0px;
-}
-</style><style type="text/css">.lf-progress {
-  -webkit-appearance: none;
-  -moz-apperance: none;
-  width: 100%;
-  /* margin: 0 10px; */
-  height: 4px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-.lf-progress:focus {
-  outline: none;
-  border: none;
-}
-.lf-progress::-moz-range-track {
-  cursor: pointer;
-  background: none;
-  border: none;
-  outline: none;
-}
-.lf-progress::-webkit-slider-thumb {
-  -webkit-appearance: none !important;
-  height: 13px;
-  width: 13px;
-  border: 0;
-  border-radius: 50%;
-  background: #0fccce;
-  cursor: pointer;
-}
-.lf-progress::-moz-range-thumb {
-  -moz-appearance: none !important;
-  height: 13px;
-  width: 13px;
-  border: 0;
-  border-radius: 50%;
-  background: #0fccce;
-  cursor: pointer;
-}
-.lf-progress::-ms-track {
-  width: 100%;
-  height: 3px;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  color: transparent;
-}
-.lf-progress::-ms-fill-lower {
-  background: #ccc;
-  border-radius: 3px;
-}
-.lf-progress::-ms-fill-upper {
-  background: #ccc;
-  border-radius: 3px;
-}
-.lf-progress::-ms-thumb {
-  border: 0;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  background: #0fccce;
-  cursor: pointer;
-}
-.lf-progress:focus::-ms-fill-lower {
-  background: #ccc;
-}
-.lf-progress:focus::-ms-fill-upper {
-  background: #ccc;
-}
-.lf-player-container :focus {
-  outline: 0;
-}
-.lf-popover {
-  position: relative;
-}
+        .interest-tag {
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(206, 88, 10, 0.2);
+            border-radius: 20px;
+            font-size: 12px;
+            margin: 5px;
+            color: #000000;
+        }
 
-.lf-popover-content {
-  display: inline-block;
-  position: absolute;
-  opacity: 1;
-  visibility: visible;
-  transform: translate(0, -10px);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
-}
+        /* Right Content Area */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
 
-.lf-popover-content.hidden {
-  opacity: 0;
-  visibility: hidden;
-  transform: translate(0, 0px);
-}
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            background: #f8f9fa;
+            padding: 0 30px;
+            border-bottom: 2px solid #e9ecef;
+        }
 
-.lf-player-btn-container {
-  display: flex;
-  align-items: center;
-}
-.lf-player-btn {
-  cursor: pointer;
-  fill: #999;
-  width: 14px;
-}
+        .tab-button {
+            padding: 18px 25px;
+            background: none;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            color: #6c757d;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
 
-.lf-player-btn.active {
-  fill: #555;
-}
+        .tab-button:hover {
+            color: #667eea;
+        }
 
-.lf-popover {
-  position: relative;
-}
+        .tab-button.active {
+            color: #667eea;
+        }
 
-.lf-popover-content {
-  display: inline-block;
-  position: absolute;
-  background-color: #ffffff;
-  opacity: 1;
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 3px 3px 0 0;
+        }
 
-  transform: translate(0, -10px);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
-  padding: 10px;
-}
+        /* Tab Content */
+        .tab-content {
+            padding: 40px;
+            overflow-y: auto;
+            flex: 1;
+        }
 
-.lf-popover-content.hidden {
-  opacity: 0;
-  visibility: hidden;
-  transform: translate(0, 0px);
-}
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
 
-.lf-arrow {
-  position: absolute;
-  z-index: -1;
-  content: '';
-  bottom: -9px;
-  border-style: solid;
-  border-width: 10px 10px 0px 10px;
-}
+        .tab-pane.active {
+            display: block;
+        }
 
-.lf-left-align,
-.lf-left-align .lfarrow {
-  left: 0;
-  right: unset;
-}
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-.lf-right-align,
-.lf-right-align .lf-arrow {
-  right: 0;
-  left: unset;
-}
+        /* About Section */
+        .about-content {
+            line-height: 1.8;
+            color: #4a5568;
+        }
 
-.lf-text-input {
-  border: 1px #ccc solid;
-  border-radius: 5px;
-  padding: 3px;
-  width: 60px;
-  margin: 0;
-}
+        .about-content h2 {
+            color: #1a202c;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
 
-.lf-color-picker {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 90px;
-}
+        .about-content p {
+            margin-bottom: 15px;
+        }
 
-.lf-color-selectors {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+        .highlight {
+            color: #cc0000;
+            font-weight: 600;
+        }
 
-.lf-color-component {
-  display: flex;
-  flex-direction: row;
-  font-size: 12px;
-  align-items: center;
-  justify-content: center;
-}
+        /* Publications */
+        .publication-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            display: flex;
+            gap: 20px;
+            align-items: start;
+        }
 
-.lf-color-component strong {
-  width: 40px;
-}
+        .publication-item:hover {
+            box-shadow: 0 4px 15px rgba(102,126,234,0.15);
+            border-color: #667eea;
+        }
 
-.lf-color-component input[type='range'] {
-  margin: 0 0 0 10px;
-}
+        .publication-image {
+            flex-shrink: 0;
+            width: 200px;
+            height: 150px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: none
+        }
 
-.lf-color-component input[type='number'] {
-  width: 50px;
-  margin: 0 0 0 10px;
-}
+        .publication-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
 
-.lf-color-preview {
-  font-size: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 5px;
-}
+        .publication-item:hover .publication-image img {
+            transform: scale(1.05);
+        }
 
-.lf-preview {
-  height: 60px;
-  width: 60px;
-}
+        .publication-content {
+            flex: 1;
+            min-width: 0;
+        }
 
-.lf-popover-snapshot {
-  width: 150px;
-}
-.lf-popover-snapshot h5 {
-  margin: 5px 0 10px 0;
-  font-size: 0.75rem;
-}
-.lf-popover-snapshot a {
-  display: block;
-  text-decoration: none;
-}
-.lf-popover-snapshot a:before {
-  content: '⥼';
-  margin-right: 5px;
-}
-.lf-popover-snapshot .lf-note {
-  display: block;
-  margin-top: 10px;
-  color: #999;
-}
-.lf-player-controls > div {
-  margin-right: 5px;
-  margin-left: 5px;
-}
-.lf-player-controls > div:first-child {
-  margin-left: 0px;
-}
-.lf-player-controls > div:last-child {
-  margin-right: 0px;
-}
-</style></head>
+        .publication-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
 
-<body monica-id="ofpnmcalabcbjgholdjcjblkibolbppb" monica-version="7.9.8" cz-shortcut-listen="true">
-  <table class="container-table"><tbody>
-    <tr class="no-padding">
-      <td class="no-padding">
-        <table class="full-width-table"><tbody>
-          <tr class="no-padding">
-            <td class="profile-content">
-              <p class="centered-text" style="color: #de1d1d; ">
-                <name><b>Hoang-Loc Cao</b></name>
-              </p>
-              <p>👋 Hi! I'm <strong>Hoang-Loc Cao</strong>, currently pursuing my Bachelor's Degree in Data Science at <a href="https://en.hcmus.edu.vn/">VNUHCM - University of Science</a>, advised by <a href="https://scholar.google.com.vn/citations?user=UA_83MUAAAAJ">Prof. Bac Le</a>.<br>
-                🔍 My research interests focus on 
-                <span style="color: #cc0000; font-weight: bold;">AI in Healthcare</span>, at the intersection of <strong>Medical Image Analysis</strong> and <strong>Explainable AI</strong>. <br>
+        .publication-authors {
+            font-size: 13px;
+            color: #6c757d;
+            margin-bottom: 6px;
+        }
+
+        .publication-venue {
+            font-size: 12px;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn {
+            padding: 6px 14px;
+            border-radius: 5px;
+            font-size: 11px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1.5px solid;
+        }
+
+        .btn-paper {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .btn-paper:hover {
+            background: #5568d3;
+            transform: translateY(-1px);
+        }
+
+        .btn-code {
+            background: white;
+            color: #667eea;
+            border-color: #667eea;
+        }
+
+        .btn-code:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-1px);
+        }
 
 
-		    
-              <p class="centered-text">
-                <a href="data/CV.pdf">CV</a> &nbsp;/&nbsp;
-                <a href="https://scholar.google.com/citations?user=szHDzgkAAAAJ&amp;hl">Google Scholar</a> &nbsp;/&nbsp;
-		<a href="https://www.researchgate.net/profile/Hoang-Loc-Cao">ResearchGate</a> &nbsp;/&nbsp;
-                <a href="https://github.com/loc110504/">Github</a> &nbsp;/&nbsp;
-				  <a href="https://www.linkedin.com/in/loccao1105/">LinkedIn</a> &nbsp;&nbsp;
-              </p>
-		    
-            </td>
-            <td class="profile-image">
-              <a href="images/ava.png"><img style="width:100%;max-width:100%" alt="profile photo" src="images/ava.png" class="hoverZoomLink"></a>
-            </td>
-          </tr>
-        </tbody></table>
-	      
-       
-<heading id="publications"><b>Publications</b></heading>
-<table class="full-width-table publications-table">
-  <tbody>
+                @media (max-width: 968px) {
+            .experience-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
 
-    <!-- Paper 1 -->
-    <tr class="paper-row" onmouseout="hypernerf_stop()" onmouseover="hypernerf_start()">
-      <td class="paper-image-cell">
-        <img src="images/sdtnet.png" alt="SDTNet" class="paper-thumb">
-      </td>
-      <td class="paper-content-cell">
-          <span class="paper-title">
-            Scribble-Supervised Medical Image Segmentation with Dynamic Teacher Switching and Hierarchical Consistency
-          </span>
-        <div class="paper-authors">
-          Thanh-Huy Nguyen*, <strong>Hoang-Loc Cao</strong>*, Dat T. Chung, Mai-Anh Vu, Thanh-Minh Nguyen,
-          Minh Le, Phat K. Huynh, Ulas Bagci
-        </div>
-        <div class="paper-venue">
-          <em><a href="https://biomedicalimaging.org/2026/"><strong>ISBI'26</strong> - IEEE International Symposium on Biomedical Imaging</a></em> (Under Review)
-        </div>
-        <div class="paper-links">
-          <a href="https://arxiv.org/" class="paper-btn">Paper</a>
-          <a href="https://github.com/loc110504/SDT-Net" class="code-btn">Code</a>
-        </div>
-      </td>
-    </tr>
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
 
-    <!-- Paper 2 -->
-    <tr class="paper-row" onmouseout="hypernerf_stop()" onmouseover="hypernerf_start()">
-      <td class="paper-image-cell">
-        <img src="images/aimedhealth26.png" alt="AIMedHealth" class="paper-thumb">
-      </td>
-      <td class="paper-content-cell">
-          <span class="paper-title">
-            Modality-Specific Enhancement and Complementary Fusion for Semi-Supervised Multi-Modal Brain Tumor Segmentation
-          </span>
-        <div class="paper-authors">
-          Dat Tien Chung, Ba-Thinh Lam, Thanh-Huy Nguyen, Thien Nguyen, Nguyen Lan Vi Vu,
-          <strong>Hoang Loc Cao</strong>, Phat Kim Huynh, Min Xu
-        </div>
-        <div class="paper-venue">
-          <em><a href="https://sites.google.com/view/aimedhealth-aaai/home">
-            <strong>AAAI'26</strong> - AI for Medicine and Healthcare Bridge Program
-          </a></em>
-        </div>
-        <div class="paper-links">
-          <a href="https://arxiv.org/" class="paper-btn">Paper</a>
-        </div>
-      </td>
-    </tr>
+            .blog-sidebar {
+                order: -1;
+            }
+        }
+ /* Blog Section */
+        .blog-container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 30px;
+        }
 
-      <!-- Paper 3 -->
-    <tr class="paper-row" onmouseout="hypernerf_stop()" onmouseover="hypernerf_start()">
-      <td class="paper-image-cell">
-        <img src="images/siminterview.png" alt="SimInterview" class="paper-thumb">
-      </td>
-      <td class="paper-content-cell">
+        .blog-sidebar {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
 
-          <span class="paper-title">
-            SimInterview: Transforming Business Education Through LLM-Based Simulated Multilingual Interview Training System
-          </span>
-      
-        <div class="paper-authors">
-          Truong Thanh Hung Nguyen*, Tran Diem Quynh Nguyen*, <strong>Hoang Loc Cao</strong>, Thi Cam Thanh Tran, Thi Cam Mai Truong, Hung Cao
-        </div>
-        <div class="paper-venue">
-          <em><a href="https://icefm2025.sgu.edu.vn/">
-            <strong>ICEFM'25</strong> - International Conference on Economics, Finance, and Management
-          </a></em>
-        </div>
-        <div class="paper-links">
-          <a href="https://arxiv.org/pdf/2508.11873" class="paper-btn">Paper</a>
-          <a href="https://github.com/loc110504/SimInterview" class="code-btn">Code</a>
-        </div>
-      </td>
-    </tr>
+        .blog-sidebar h3 {
+            font-size: 16px;
+            color: #1a202c;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
 
-  </tbody>
-</table>
+        .filter-tags {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
 
-      
+        .filter-tag {
+            padding: 8px 12px;
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #4a5568;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
 
-<table class="full-width-table">
-  <tbody>
-    <tr>
-      <td class="full-width-cell">
-        <heading id="service"><b>Education</b></heading>
-          <ul style="list-style-type:square;">
-            <li>
-              B.S. in Data Science @ VNUHCM - University of Science, Vietnam
-            </li>
-          </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        .filter-tag:hover {
+            border-color: #667eea;
+            color: #667eea;
+        }
 
-<table class="full-width-table">
-  <tbody>
-    <tr>
-      <td class="full-width-cell">
-        <heading id="service"><b>Experience</b></heading>
-          <ul style="list-style-type:square;">
-            <li>
-              Research Assistant @ AIMA Research Lab - AI VIETNAM, Vietnam
-            </li>
-            <li>
-                Research Intern @ PASSIO Lab - North Carolina A&T State University, USA
-            </li>
-            <li>
-                AI Research Intern @ Quy Nhon AI Center - FPT Software, Vietnam
-            </li>
-            
-          </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        .filter-tag.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
 
-<footer style="
+        .blog-content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .blog-post {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .blog-post:hover {
+            box-shadow: 0 4px 15px rgba(102,126,234,0.15);
+            border-color: #667eea;
+        }
+
+        .blog-post.hidden {
+            display: none;
+        }
+
+        .blog-post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 12px;
+        }
+
+        .blog-post-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 8px;
+        }
+
+        .blog-post-date {
+            font-size: 12px;
+            color: #6c757d;
+            white-space: nowrap;
+        }
+
+        .blog-post-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        .blog-tag {
+            padding: 4px 10px;
+            background: rgba(102,126,234,0.1);
+            color: #667eea;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .blog-post-excerpt {
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .blog-read-more {
+            color: #667eea;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s ease;
+        }
+
+        .blog-read-more:hover {
+            gap: 10px;
+        }
+
+
+
+
+        /* Experience Section */
+        .experience-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .experience-section {
+            position: relative;
+        }
+
+        .experience-section h3 {
+            font-size: 20px;
+            color: #1a202c;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #667eea;
+        }
+
+/* Timeline Box Styling - thêm sau dòng 643 */
+.timeline-item {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 25px;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+    box-shadow: 0 4px 15px rgba(102,126,234,0.15);
+    border-color: #667eea;
+    transform: translateY(-2px);
+}
+
+.timeline-content {
+    display: flex;
+    align-items: start;
+    gap: 15px;
+}
+
+.timeline-logo {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000000;
+}
+
+.timeline-logo img {
     width: 100%;
-    text-align: center;
-    font-size: 12px;
-    color: #555;
-    padding: 10px 0;
-    margin-top: 40px;
-    border-top: 1px solid #ddd;
-">
-    © 2025 Hoang-Loc Cao — Last updated: November 2025  
-</footer
+    height: 100%;
+    object-fit: contain;
+    padding: 8px;
+}
+
+.timeline-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.timeline-organization {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.timeline-role {
+    font-size: 15px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.timeline-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.timeline-date,
+.timeline-location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #6c757d;
+}
+
+.timeline-date svg,
+.timeline-location svg {
+    width: 14px;
+    height: 14px;
+    fill: #667eea;
+    flex-shrink: 0;
+}
+
+.timeline-content-text {
+    font-size: 14px;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-top: 8px;
+}
+
+.timeline-content-text strong {
+    color: #1a202c;
+    font-weight: 600;
+}
 
 
+.about-section-title {
+    font-size: 22px;
+    color: #1a202c;
+    margin: 40px 0 25px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #667eea;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-/*! Bundled license information:
+.timeline-wrapper {
+    position: relative;
+}
 
-simple-mind-map/dist/simpleMindMap.esm.min.css:
-  (*! Bundled license information:
-  
-  quill/dist/quill.snow.css:
-    (*!
-     * Quill Editor v2.0.2
-     * https://quilljs.com
-     * Copyright (c) 2017-2024, Slab
-     * Copyright (c) 2014, Jason Chen
-     * Copyright (c) 2013, salesforce.com
-     *)
-  *)
 
-cropperjs/dist/cropper.css:
-  (*!
-   * Cropper.js v1.6.2
-   * https://fengyuanchen.github.io/cropperjs
-   *
-   * Copyright 2015-present Chen Fengyuan
-   * Released under the MIT license
-   *
-   * Date: 2024-04-21T07:43:02.731Z
-   *)
-*/
-</style><div><div translate="no" class="_monica-theme-d2f2b383 root-container-UmvGjM markdown-font-size-provider-3KSWBx sidebar-ZRQNut" lang="en"><div class="content-root-WCIiJJ"><div class="page-extra-window--rG3TB" style="right: 0px; left: 0px;"></div><div class="dialog-root-ZbJNQk"></div><div class="artifact-widget-root-g65VNZ"></div><div class="reading-summary-status-bar-yFqhHz"></div><div class="contextual-toolbar-BjPOM3" dir="ltr" style="text-align: left;"></div><div class="window-root-ERNrXd"></div></div></div></div></template></div><div class="jvectormap-tip"></div></body></html>
+        .simple-news-box {
+              background: #fff7e6;
+              border-left: 5px solid #ffa94d;
+              padding: 20px 25px;
+              border-radius: 12px;
+              margin: 25px 0;
+              box-shadow: 0 3px 10px rgba(255, 173, 72, 0.15);
+          }
+
+          .simple-news-box h3 {
+              font-size: 18px;
+              margin-bottom: 12px;
+              color: #d97706;
+          }
+
+          .simple-news-box ul {
+              margin-left: 18px;
+              padding-left: 0;
+          }
+
+          .simple-news-box li {
+              margin-bottom: 8px;
+              font-size: 14px;
+              color: #4a4a4a;
+              line-height: 1.6;
+          }
+
+
+        @media (max-width: 968px) {
+            .experience-container {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                padding: 30px 20px;
+            }
+
+            .tab-nav {
+                overflow-x: auto;
+                padding: 0 15px;
+            }
+
+            .tab-content {
+                padding: 20px;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5568d3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="images/ava.png" alt="Hoang-Loc Cao">
+                </div>
+                <h1 class="name">Hoang-Loc Cao</h1>
+                <p class="title">Undergraduate Researcher</p>
+              </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <span>Ho Chi Minh City, Vietnam</span>
+                </div>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 11.11L3.97 9 12 4.89 20.03 9 12 14.11zm-5 1.78v2.67L12 21l5-2.44v-2.67L12 17l-5-2.11z"/>
+                    </svg>
+                    <span>VNUHCM - University of Science</span>
+                </div>            
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <span>loc11052004@gmail.com</span>
+                </div>
+
+            </div>
+
+            <div class="social-links">
+
+                <!-- CV (đổi màu tại fill="#") -->
+                <a href="data/CV.pdf" target="_blank" data-tooltip="CV">
+                    <svg viewBox="0 0 24 24" fill="#FF5757">
+                        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M10,19L12,15H9V10H15V15L13,19H10Z"/>
+                    </svg>
+                </a>
+
+                <!-- Google Scholar -->
+                <a href="https://scholar.google.com/citations?user=szHDzgkAAAAJ&hl" target="_blank" data-tooltip="Google Scholar">
+                    <svg viewBox="0 0 24 24" fill="#4285F4">
+                        <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+                    </svg>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/loc110504/" target="_blank" data-tooltip="GitHub">
+                    <svg viewBox="0 0 24 24" fill="#1a202c">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                    </svg>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/loccao1105/" target="_blank" data-tooltip="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="#0A66C2">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    </svg>
+                </a>
+
+            </div>
+
+
+            <div class="interests">
+                <h3>Research Interests</h3>
+                <div class="interest-tag">Deep Learning</div>
+                <div class="interest-tag">Computer Vision</div>
+                <div class="interest-tag">Medical Imaging</div>
+                <div class="interest-tag">Explainable AI</div>
+            </div>
+        </aside>
+
+        <!-- Right Content -->
+        <main class="content">
+            <nav class="tab-nav">
+                <button class="tab-button active" onclick="showTab('about')">Home</button>
+                <button class="tab-button" onclick="showTab('publications')">Publications</button>
+                <button class="tab-button" onclick="showTab('blog')">Blog</button>
+            </nav>
+
+            <div class="tab-content">
+                <!-- About Tab -->
+<div id="about" class="tab-pane active">
+    <div class="about-content">
+        <h2>👋 Welcome to my homepage!</h2>
+        <h3 class="about-section-title">🧑‍💻 Biography</h3>
+        <p>I'm <strong>Hoang-Loc Cao</strong>, currently pursuing my Bachelor's Degree in Data Science at <a href="https://en.hcmus.edu.vn/" target="_blank">VNUHCM - University of Science</a>, where I am advised by <a href="https://scholar.google.com.vn/citations?user=UA_83MUAAAAJ" target="_blank">Prof. Bac Le</a>.</p>
+        
+        <p>My research interests focus on advancing <span class="highlight">AI for Healthcare</span>, at the intersection of <strong>Medical Image Analysis</strong> and <strong>Explainable AI</strong>. I am passionate about developing intelligent and trustworthy systems that assist clinicians in diagnosis and treatment planning while ensuring interpretability, safety, and reliability.</p> 
+        <div class="opportunity-box">
+            <p> For research discussion or collaboration opportunities, please feel free to chat with me via email or connect on LinkedIn.
+            </p>
+          </div>
+          <div class="simple-news-box">
+              <h3>📰 News</h3>
+              <ul>
+                  <li><strong>[Nov 2025]</strong> One paper accepted at AI for Medicine and Healthcare AAAI Bridge Program 2026.</li>
+                  <li><strong>[Aug 2025]</strong> One paper accepted at International Conference on Economics, Finance, and Management 2025.</li>
+              </ul>
+          </div>
+
+        <!-- Education Section -->
+        <h3 class="about-section-title">🎓 Education</h3>
+        <div class="timeline-wrapper">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-logo">
+                        <img src="images/hcmus.png" alt="HCMUS">
+                    </div>
+                    <div class="timeline-details">
+                        <div class="timeline-organization">VNUHCM - University of Science</div>
+                        <div class="timeline-role">Bachelor of Science in Data Science</div>
+                        <div class="timeline-meta">
+                            <div class="timeline-date">
+                                <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                                <span>2022 - 2026</span>
+                            </div>
+                            <div class="timeline-location">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                <span>Ho Chi Minh City, Vietnam</span>
+                            </div>
+                        </div>
+                        <div class="timeline-content-text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <h3 class="about-section-title">💼 Experience</h3>
+        <div class="timeline-wrapper">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-logo">
+                        <img src="images/passio.png" alt="PASSIO Lab">
+                    </div>
+                    <div class="timeline-details">
+                        <div class="timeline-organization">PASSIO Lab - NC A&T State University</div>
+                        <div class="timeline-role">Research Intern</div>
+                        <div class="timeline-meta">
+                            <div class="timeline-date">
+                                <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                                <span>09/2025 - Present</span>
+                            </div>
+                            <div class="timeline-location">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                <span>North Carolina, USA</span>
+                            </div>
+                        </div>
+                        <div class="timeline-content-text">
+                            Worked on medical image segmentation with imperfect & limited annotations.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-logo">
+                        <img src="images/aima.png" alt="AI VIETNAM">
+                    </div>
+                    <div class="timeline-details">
+                        <div class="timeline-organization">AIMA Research Lab - AI VIETNAM</div>
+                        <div class="timeline-role">Research Assistant</div>
+                        <div class="timeline-meta">
+                            <div class="timeline-date">
+                                <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                                <span>05/2025 - Present</span>
+                            </div>
+                            <div class="timeline-location">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                <span>Ho Chi Minh City, Vietnam</span>
+                            </div>
+                        </div>
+                        <div class="timeline-content-text">
+                            Worked on medical image analysis and deep learning research projects.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-logo">
+                        <img src="images/fpt.png" alt="FPT Software">
+                    </div>
+                    <div class="timeline-details">
+                        <div class="timeline-organization">Quy Nhon AI Center - FPT Software</div>
+                        <div class="timeline-role">AI Research Intern</div>
+                        <div class="timeline-meta">
+                            <div class="timeline-date">
+                                <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                                <span>05/2025 - 08/2025</span>
+                            </div>
+                            <div class="timeline-location">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                <span>Gia Lai, Vietnam</span>
+                            </div>
+                        </div>
+                        <div class="timeline-content-text">
+                            Researched and developed trustworthy AI solutions for interview training systems.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                <!-- Publications Tab -->
+                <div id="publications" class="tab-pane">
+                    <h2 style="margin-bottom: 30px; color: #1a202c;">📚 Publications</h2>
+                    
+                <div class="publication-item">
+                    <div class="publication-image">
+                        <img src="images/sdtnet.png" alt="SDT-Net">
+                    </div>
+
+                    <div class="publication-content">
+                        <div class="publication-title">
+                            Scribble-Supervised Medical Image Segmentation with Dynamic Teacher Switching and Hierarchical Consistency
+                        </div>
+                        <div class="publication-authors">
+                            Thanh-Huy Nguyen*, <strong>Hoang-Loc Cao</strong>*, Dat T. Chung, Mai-Anh Vu, Thanh-Minh Nguyen, Minh Le, Phat K. Huynh, Ulas Bagci
+                        </div>
+                        <div class="publication-venue">
+                            Under Review
+                        </div>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/" class="btn btn-paper" target="_blank">Paper</a>
+                            <a href="https://github.com/loc110504/SDT-Net" class="btn btn-code" target="_blank">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="publication-item">
+                    <div class="publication-image">
+                        <img src="images/aimedhealth26.png" alt="Brain Tumor">
+                    </div>
+
+                    <div class="publication-content">
+                        <div class="publication-title">
+                            Modality-Specific Enhancement and Complementary Fusion for Semi-Supervised Multi-Modal Brain Tumor Segmentation
+                        </div>
+                        <div class="publication-authors">
+                            Dat Tien Chung, Ba-Thinh Lam, Thanh-Huy Nguyen, Thien Nguyen, Nguyen Lan Vi Vu,
+                            <strong>Hoang Loc Cao</strong>, Phat Kim Huynh, Min Xu
+                        </div>
+                        <div class="publication-venue">
+                            AI for Medicine and Healthcare Bridge Program (AAAI), 2026
+                        </div>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/" class="btn btn-paper" target="_blank">Paper</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="publication-item">
+                    <div class="publication-image">
+                        <img src="images/siminterview.png" alt="SimInterview">
+                    </div>
+
+                    <div class="publication-content">
+                        <div class="publication-title">
+                            SimInterview: Transforming Business Education Through LLM-Based Simulated Multilingual Interview Training System
+                        </div>
+                        <div class="publication-authors">
+                            Truong Thanh Hung Nguyen*, Tran Diem Quynh Nguyen*, <strong>Hoang Loc Cao</strong>,
+                            Thi Cam Thanh Tran, Thi Cam Mai Truong, Hung Cao
+                        </div>
+                        <div class="publication-venue">
+                            International Conference on Economics, Finance, and Management (ICEFM), 2025
+                        </div>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/pdf/2508.11873" class="btn btn-paper" target="_blank">Paper</a>
+                            <a href="https://github.com/loc110504/SimInterview" class="btn btn-code" target="_blank">Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+
+                <!----Blog------ -->
+                <div id="blog" class="tab-pane">
+                    <h2 style="margin-bottom: 30px; color: #1a202c;">📝 Blog</h2>
+                    
+                    <div class="blog-container">
+                        <!-- Sidebar Filter -->
+                        <div class="blog-sidebar">
+                            <h3>🏷️ Filter by Topic</h3>
+                            <div class="filter-tags">
+                                <button class="filter-tag active" onclick="filterBlog('all')">All Posts</button>
+                                <button class="filter-tag" onclick="filterBlog('medical-ai')">Medical AI</button>
+                                <button class="filter-tag" onclick="filterBlog('explainable-ai')">Explainable AI</button>
+                                <button class="filter-tag" onclick="filterBlog('research')">Research</button>
+                            </div>
+                        </div>
+
+                        <!-- Blog Posts -->
+                        <div class="blog-content-area">
+                            <!-- Post 1 -->
+                            <div class="blog-post" data-tags="medical-ai,research">
+                                <div class="blog-post-header">
+                                    <div>
+                                        <div class="blog-post-title">Sample1</div>
+                                        <div class="blog-post-tags">
+                                            <span class="blog-tag">Medical AI</span>
+                                            <span class="blog-tag">Research</span>
+                                        </div>
+                                    </div>
+                                    <div class="blog-post-date">Nov 20, 2024</div>
+                                </div>
+                                <div class="blog-post-excerpt">
+                                    Medical image annotation is expensive and time-consuming, requiring expert knowledge. Semi-supervised learning offers a promising solution by leveraging both labeled and unlabeled data. In this post, I explore recent advances in semi-supervised segmentation methods and their applications in healthcare...
+                                </div>
+                                <a href="#" class="blog-read-more">Read More →</a>
+                            </div>
+
+                            <!-- Post 2 -->
+                            <div class="blog-post" data-tags="explainable-ai,research">
+                                <div class="blog-post-header">
+                                    <div>
+                                        <div class="blog-post-title">Sample2</div>
+                                        <div class="blog-post-tags">
+                                            <span class="blog-tag">Explainable AI</span>
+                                            <span class="blog-tag">Research</span>
+                                        </div>
+                                    </div>
+                                    <div class="blog-post-date">Nov 15, 2024</div>
+                                </div>
+                                <div class="blog-post-excerpt">
+                                    As AI systems become more prevalent in healthcare, the need for transparency and interpretability grows critical. Clinicians need to understand why an AI model makes certain predictions to trust and effectively use these tools. This article discusses key challenges and recent approaches...
+                                </div>
+                                <a href="#" class="blog-read-more">Read More →</a>
+                            </div>
+
+                            <!-- Post 3 -->
+                            <div class="blog-post" data-tags="tutorial,medical-ai">
+                                <div class="blog-post-header">
+                                    <div>
+                                        <div class="blog-post-title">Sample3</div>
+                                        <div class="blog-post-tags">
+                                            <span class="blog-tag">Tutorial</span>
+                                            <span class="blog-tag">Medical AI</span>
+                                        </div>
+                                    </div>
+                                    <div class="blog-post-date">Nov 10, 2024</div>
+                                </div>
+                                <div class="blog-post-excerpt">
+                                    Interested in medical image analysis but don't know where to start? This comprehensive guide covers the fundamentals, from understanding medical imaging modalities to implementing your first segmentation model. Perfect for students and researchers new to the field...
+                                </div>
+                                <a href="#" class="blog-read-more">Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-pane');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        function filterBlog(tag) {
+            // Update active filter button
+            const filterButtons = document.querySelectorAll('.filter-tag');
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter blog posts
+            const posts = document.querySelectorAll('.blog-post');
+            posts.forEach(post => {
+                const postTags = post.getAttribute('data-tags');
+                if (tag === 'all' || postTags.includes(tag)) {
+                    post.classList.remove('hidden');
+                } else {
+                    post.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+
+        <footer>
+        © 2025 - Hoang-Loc Cao. All rights reserved.
+    </footer>
+</body>
+</html>
