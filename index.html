@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/jpeg" href="images/images.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loc Cao @ HCMUS</title>
+    <title>Hoang-Loc Cao - Homepage</title>
     <style>
         * {
             margin: 0;
@@ -138,7 +138,7 @@
             width: 18px;
             height: 18px;
             margin-right: 12px;
-            fill: #3b44ff;
+            fill: #000000;
         }
 
         .social-links {
@@ -597,6 +597,10 @@
     align-items: start;
     gap: 15px;
 }
+.timeline-content-text ul {
+    margin-top: 8px;
+    padding-left: 20px;
+}
 
 .timeline-logo {
     flex-shrink: 0;
@@ -684,7 +688,7 @@
     color: #1a202c;
     margin: 40px 0 25px 0;
     padding-bottom: 12px;
-    border-bottom: 2px solid #667eea;
+    border-bottom: 2px solid #000000;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -835,31 +839,21 @@
                 <h3>Research Interests</h3>
                 <div class="interest-tag">AI for Healthcare</div>
                 <div class="interest-tag">Medical Imaging</div>
-                <div class="interest-tag">XAI</div>
-                <div class="interest-tag">Multi-Agent Collaboration</div>
+                <div class="interest-tag">Explainable AI</div>
+                <div class="interest-tag">Multi-Agent Systems</div>
             </div>
         </aside>
 
         <!-- Right Content -->
         <main class="content">
-            <nav class="tab-nav">
-                <button class="tab-button active" onclick="showTab('about')">Home</button>
-                <button class="tab-button" onclick="showTab('publications')">Publications</button>
-            </nav>
 
             <div class="tab-content">
                 <!-- About Tab -->
 <div id="about" class="tab-pane active">
     <div class="about-content">
-        <h2>👋 Welcome to my homepage!</h2>
-        <h3 class="about-section-title">🧑‍💻 Biography</h3>
-        <p>I'm <strong>Hoang-Loc Cao</strong>, currently pursuing my Bachelor's Degree in Data Science at <a href="https://en.hcmus.edu.vn/" target="_blank">VNUHCM - University of Science</a>, where I am advised by <a href="https://scholar.google.com.vn/citations?user=UA_83MUAAAAJ" target="_blank">Prof. Bac Le</a>.</p>
-        
-        <p>My research interests focus on advancing <span class="highlight">AI for X (Healthcare and Law)</span>, at the intersection of <strong>Medical Image Analysis</strong>, <strong>Explainable AI</strong> and <strong>Multi-Agent Collaboration</strong>. I am passionate about developing automated and trustworthy systems that assist experts in accurate decision-making while ensuring interpretability, safety, and reliability.</p> 
-        <div class="opportunity-box">
-            <p> For research discussion or collaboration opportunities, please feel free to chat with me via <strong>email</strong> or connect on <strong>LinkedIn</strong>.
-            </p>
-        </div>
+        <h2>Welcome to my homepage!</h2>
+<p>I'm <strong>Hoang-Loc Cao</strong>, currently a final-year undergraduate student majoring in Data Science at the <a href="https://en.hcmus.edu.vn/" target="_blank">VNUHCM - University of Science</a>, where I am advised by <a href="https://scholar.google.com.vn/citations?user=UA_83MUAAAAJ" target="_blank">Prof. Bac Le</a>. 
+    <br>My research interests focus on <span class="highlight">AI for Healthcare</span>, at the intersection of <strong>Medical Image Analysis</strong> and <strong>Explainable AI</strong>. In Medical Image Analysis, I am interested in learning with imperfect and limited annotations, including label scarcity, domain shift, and low-quality labels, as well as medical image segmentation, classification, and foundation models for medical imaging. In Explainable AI, my interests include multi-agent collaboration, LLM reasoning, neuro-symbolic AI, and computational argumentation, with the goal of developing trustworthy and effective AI systems for healthcare.</p>
           <!-- <div class="simple-news-box">
               <h3>📰 News</h3>
               <ul>
@@ -878,11 +872,11 @@
                     </div>
                     <div class="timeline-details">
                         <div class="timeline-organization">VNUHCM - University of Science</div>
-                        <div class="timeline-role">Bachelor of Science in Data Science</div>
+                        <div class="timeline-role">B.Sc in Data Science</div>
                         <div class="timeline-meta">
                             <div class="timeline-date">
                                 <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
-                                <span>2022 - 2026</span>
+                                <span>09/2022 - 09/2026 (expected)</span>
                             </div>
                             <div class="timeline-location">
                                 <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -899,6 +893,43 @@
         <!-- Experience Section -->
         <h3 class="about-section-title">💼 Experience</h3>
         <div class="timeline-wrapper">
+
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <div class="timeline-logo">
+                    <img src="images/aima.png" alt="AI VIETNAM">
+                </div>
+                <div class="timeline-details">
+                    <div class="timeline-organization">AIMA Research Lab</div>
+                    <div class="timeline-role">Research Assistant</div>
+                    <div class="timeline-meta">
+                        <div class="timeline-date">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                            </svg>
+                            <span>05/2025 - Present</span>
+                        </div>
+                        <div class="timeline-location">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            <span>Ho Chi Minh City, Vietnam</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-content-text">
+                        <ul>
+                            <li>Supervised by M.Sc. Thanh Huy Nguyen (Carnegie Mellon University), Assoc. Prof. Ulas Bagci (Northwestern University)</li>
+                            <li>Researched medical image segmentation with limited and imperfect annotations.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
             <div class="timeline-item">
                 <div class="timeline-content">
                     <div class="timeline-logo">
@@ -906,7 +937,7 @@
                     </div>
                     <div class="timeline-details">
                         <div class="timeline-organization">PASSIO Lab - NC A&T State University</div>
-                        <div class="timeline-role">Research Intern</div>
+                        <div class="timeline-role">Research Assistant</div>
                         <div class="timeline-meta">
                             <div class="timeline-date">
                                 <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
@@ -917,37 +948,16 @@
                                 <span>North Carolina, USA</span>
                             </div>
                         </div>
-                        <div class="timeline-content-text">
-                            Worked on medical image segmentation with imperfect & limited annotations.
-                        </div>
+                    <div class="timeline-content-text">
+                        <ul>
+                            <li>Supervised by Asst. Prof. Phat K. Huynh (North Carolina A&T State University)</li>
+                            <li>Developed semi-supervised semantic segmentation frameworks for medical images</li>
+                        </ul>
+                    </div>
                     </div>
                 </div>
             </div>
 
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-logo">
-                        <img src="images/aima.png" alt="AI VIETNAM">
-                    </div>
-                    <div class="timeline-details">
-                        <div class="timeline-organization">AIMA Research Lab - AI VIETNAM</div>
-                        <div class="timeline-role">Research Assistant (part-time)</div>
-                        <div class="timeline-meta">
-                            <div class="timeline-date">
-                                <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
-                                <span>05/2025 - Present</span>
-                            </div>
-                            <div class="timeline-location">
-                                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                                <span>Ho Chi Minh City, Vietnam</span>
-                            </div>
-                        </div>
-                        <div class="timeline-content-text">
-                            Worked on medical image analysis and deep learning research projects.
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="timeline-item">
                 <div class="timeline-content">
@@ -956,7 +966,7 @@
                     </div>
                     <div class="timeline-details">
                         <div class="timeline-organization">Quy Nhon AI Center - FPT Software</div>
-                        <div class="timeline-role">AI Research Intern</div>
+                        <div class="timeline-role">AI Intern</div>
                         <div class="timeline-meta">
                             <div class="timeline-date">
                                 <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
@@ -973,14 +983,17 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 </div>
 
                 <!-- Publications Tab -->
-                <div id="publications" class="tab-pane">
-                    <h2 style="margin-bottom: 30px; color: #1a202c;">📚 Publications</h2>
-                    
+
+                <h3 class="about-section-title">📝 Publications</h3>
+                
+                <!--  SDTNet -->
                 <div class="publication-item">
                     <div class="publication-image">
                         <img src="images/sdtnet.png" alt="SDT-Net">
@@ -994,15 +1007,60 @@
                             Thanh-Huy Nguyen*, <strong>Hoang-Loc Cao</strong>*, Dat T. Chung, Mai-Anh Vu, Thanh-Minh Nguyen, Minh Le, Phat K. Huynh, Ulas Bagci
                         </div>
                         <div class="publication-venue">
-                            Under Review
+                            IEEE ISBI 2026 - International Symposium on Biomedical Imaging (Oral)
                         </div>
                         <div class="publication-links">
-                            <a href="https://arxiv.org/" class="btn btn-paper" target="_blank">Paper</a>
-                            <a href="https://github.com/loc110504/SDT-Net" class="btn btn-code" target="_blank">Code</a>
+                            <a href="https://arxiv.org/pdf/2601.14563" class="btn btn-paper" target="_blank">Paper</a>
+                            <a href="https://github.com/loc110504/SDTNet" class="btn btn-code" target="_blank">Code</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Long-tailed -->
+                <div class="publication-item">
+                    <div class="publication-image">
+                        <img src="images/long-tailed.png" alt="WBCBench">
+                    </div>
+
+                    <div class="publication-content">
+                        <div class="publication-title">
+                            Robust White Blood Cell Classification with Stain-Normalized Decoupled Learning and Ensembling
+                        </div>
+                        <div class="publication-authors">
+                            Luu Le*, <strong>Hoang-Loc Cao</strong>*, Ha-Hieu Pham, Thanh-Huy Nguyen, Ulas Bagci
+                        </div>
+                        <div class="publication-venue">
+                            Under-review
+                        </div>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/pdf/2603.01976" class="btn btn-paper" target="_blank">Paper</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ACAL -->
+                <div class="publication-item">
+                    <div class="publication-image">
+                        <img src="images/ACAL.png" alt="ACAL">
+                    </div>
+
+                    <div class="publication-content">
+                        <div class="publication-title">
+                            Adaptive Collaboration of Arena-Based Argumentative LLMs for Explainable and Contestable Legal Reasoning
+                        </div>
+                        <div class="publication-authors">
+                            <strong>Hoang-Loc Cao</strong>*, Phuc Ho*, Truong Thanh Hung Nguyen, Phuc Truong Loc Nguyen, Dinh Thien Loc Nguyen, Hung Cao
+                        </div>
+                        <div class="publication-venue">
+                            Under-review
+                        </div>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/pdf/2602.18916" class="btn btn-paper" target="_blank">Paper</a>
+                            <a href="https://github.com/loc110504/ACAL" class="btn btn-code" target="_blank">Code</a>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="publication-item">
                     <div class="publication-image">
@@ -1018,13 +1076,15 @@
                             <strong>Hoang Loc Cao</strong>, Phat Kim Huynh, Min Xu
                         </div>
                         <div class="publication-venue">
-                            AI for Medicine and Healthcare Bridge Program (AAAI), 2026
+                            AAAI 2026 - AI for Medicine and Healthcare Bridge Program
                         </div>
                         <div class="publication-links">
                             <a href="https://arxiv.org/pdf/2512.09801" class="btn btn-paper" target="_blank">Paper</a>
                         </div>
                     </div>
                 </div>
+
+
 
 
                 <div class="publication-item">
@@ -1049,27 +1109,8 @@
                         </div>
                     </div>
                 </div>
-
                 </div>
 
-
-                <!----Blog------ -->
-                <div id="blog" class="tab-pane">
-                    <h2 style="margin-bottom: 30px; color: #1a202c;">📝 Blog</h2>
-                    
-                    <div class="blog-container">
-                        <!-- Sidebar Filter -->
-                        <div class="blog-sidebar">
-                            <h3>🏷️ Filter by Topic</h3>
-                            <div class="filter-tags">
-                                <button class="filter-tag active" onclick="filterBlog('all')">All Posts</button>
-                                <button class="filter-tag" onclick="filterBlog('medical-ai')">Medical AI</button>
-                                <button class="filter-tag" onclick="filterBlog('explainable-ai')">Explainable AI</button>
-                                <button class="filter-tag" onclick="filterBlog('research')">Research</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </main>
     </div>
@@ -1110,8 +1151,5 @@
         }
     </script>
 
-        <footer>
-        © 2025 - Hoang-Loc Cao. All rights reserved.
-    </footer>
 </body>
 </html>
