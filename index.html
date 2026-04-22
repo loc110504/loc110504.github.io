@@ -83,6 +83,28 @@
             background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 100%);
             z-index: 0;
         }
+        .research-internship-box {
+            margin: 22px 0 28px 0;
+            padding: 20px 24px;
+            background: #f7efe9;
+            border: 1.5px solid #efc7bb;
+            border-radius: 22px;
+            color: #9a3f12;
+            line-height: 1.65;
+            font-size: 17px;
+            box-shadow: 0 2px 8px rgba(154, 63, 18, 0.06);
+        }
+
+        .research-internship-box strong {
+            color: #a84314;
+            font-weight: 700;
+        }
+
+        .research-internship-box .email {
+            color: #a84314;
+            font-weight: 700;
+            text-decoration: none;
+        }
 
         .profile-section {
             text-align: center;
@@ -849,11 +871,33 @@
 
             <div class="tab-content">
                 <!-- About Tab -->
-<div id="about" class="tab-pane active">
+
+                <div id="about" class="tab-pane active">
     <div class="about-content">
         <h2>Welcome to my homepage!</h2>
-<p>I'm <strong>Hoang-Loc Cao</strong>, currently a final-year undergraduate student majoring in Data Science at the <a href="https://en.hcmus.edu.vn/" target="_blank">VNUHCM - University of Science</a>, where I am advised by <a href="https://scholar.google.com.vn/citations?user=UA_83MUAAAAJ" target="_blank">Prof. Bac Le</a>. 
-    <br>My research interests focus on <span class="highlight">AI for Healthcare</span>, at the intersection of <strong>Medical Image Analysis</strong> and <strong>Explainable AI</strong>. In Medical Image Analysis, I am interested in learning with imperfect and limited annotations, including label scarcity, domain shift, and low-quality labels, as well as medical image segmentation, classification, and foundation models for medical imaging. In Explainable AI, my interests include multi-agent collaboration, LLM reasoning, neuro-symbolic AI, and computational argumentation, with the goal of developing trustworthy and effective AI systems for healthcare.</p>
+    <p>
+        I'm <strong>Hoang-Loc Cao</strong>, a final-year undergraduate student in Data Science at the 
+        <a href="https://en.hcmus.edu.vn/" target="_blank">VNUHCM - University of Science</a>, where I am advised by 
+        <a href="https://scholar.google.com.vn/citations?user=UA_83MUAAAAJ" target="_blank">Prof. Bac Le</a>.
+        <br>
+        My research interests lie in <span class="highlight">AI for Healthcare</span>, with a primary focus on 
+        <strong>Medical Image Analysis</strong> and a broader interest in building <strong>trustworthy AI systems</strong> for clinical applications. 
+        In Medical Image Analysis, I am particularly interested in developing methods that can learn effectively from 
+        <strong>limited and imperfect supervision</strong>, including label scarcity, noisy annotations, domain shift, and low-quality labels. 
+        I am especially motivated by problems in medical image segmentation, classification, and foundation models for medical imaging, 
+        with the goal of making AI systems more robust, data-efficient, and clinically useful in real-world healthcare settings.
+        <br>
+        Alongside this, I am also interested in <strong>Explainable AI</strong>, particularly in LLM reasoning, multi-agent collaboration, 
+        neuro-symbolic AI, and computational argumentation, as I believe interpretability and reliability are essential for the safe deployment of AI in medicine.
+    </p>
+
+    <div class="research-internship-box">
+        🔍 I am actively seeking <strong>MSc/PhD opportunities for Fall 2027</strong> in <strong>Medical Image Analysis</strong> and related areas, 
+        with particular interests in <strong>learning under limited or imperfect data, foundation models for medical imaging, and explainable AI for healthcare</strong>. 
+        Feel free to reach out if you think we could work together!
+    </div>
+
+
           <!-- <div class="simple-news-box">
               <h3>📰 News</h3>
               <ul>
@@ -871,7 +915,7 @@
                         <img src="images/hcmus.png" alt="HCMUS">
                     </div>
                     <div class="timeline-details">
-                        <div class="timeline-organization">VNUHCM - University of Science</div>
+                        <div class="timeline-organization"> University of Science, Vietnam National University Ho Chi Minh City (VNUHCM)</div>
                         <div class="timeline-role">B.Sc in Data Science</div>
                         <div class="timeline-meta">
                             <div class="timeline-date">
@@ -966,7 +1010,7 @@
                     </div>
                     <div class="timeline-details">
                         <div class="timeline-organization">Quy Nhon AI Center - FPT Software</div>
-                        <div class="timeline-role">AI Intern</div>
+                        <div class="timeline-role">AI Research Intern</div>
                         <div class="timeline-meta">
                             <div class="timeline-date">
                                 <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
@@ -1030,10 +1074,11 @@
                             Luu Le*, <strong>Hoang-Loc Cao</strong>*, Ha-Hieu Pham, Thanh-Huy Nguyen, Ulas Bagci
                         </div>
                         <div class="publication-venue">
-                            Under-review
+                            IEEE ISBI 2026 - International Symposium on Biomedical Imaging (Oral)
                         </div>
                         <div class="publication-links">
                             <a href="https://arxiv.org/pdf/2603.01976" class="btn btn-paper" target="_blank">Paper</a>
+                            <a href="https://github.com/luulecmg/WBCBench2026" class="btn btn-code" target="_blank">Code</a>
                         </div>
                     </div>
                 </div>
@@ -1053,7 +1098,7 @@
                             <strong>Hoang-Loc Cao</strong>*, Phuc Ho*, Truong Thanh Hung Nguyen, Phuc Truong Loc Nguyen, Dinh Thien Loc Nguyen, Hung Cao
                         </div>
                         <div class="publication-venue">
-                            Under-review
+                            Canadian Conference on Artificial Intelligence 2026
                         </div>
                         <div class="publication-links">
                             <a href="https://arxiv.org/pdf/2602.18916" class="btn btn-paper" target="_blank">Paper</a>
@@ -1084,32 +1129,6 @@
                     </div>
                 </div>
 
-
-
-
-                <div class="publication-item">
-                    <div class="publication-image">
-                        <img src="images/siminterview.png" alt="SimInterview">
-                    </div>
-
-                    <div class="publication-content">
-                        <div class="publication-title">
-                            SimInterview: Transforming Business Education Through LLM-Based Simulated Multilingual Interview Training System
-                        </div>
-                        <div class="publication-authors">
-                            Truong Thanh Hung Nguyen*, Tran Diem Quynh Nguyen*, <strong>Hoang Loc Cao</strong>,
-                            Thi Cam Thanh Tran, Thi Cam Mai Truong, Hung Cao
-                        </div>
-                        <div class="publication-venue">
-                            International Conference on Economics, Finance, and Management (ICEFM), 2025
-                        </div>
-                        <div class="publication-links">
-                            <a href="https://arxiv.org/pdf/2508.11873" class="btn btn-paper" target="_blank">Paper</a>
-                            <a href="https://github.com/loc110504/SimInterview" class="btn btn-code" target="_blank">Code</a>
-                        </div>
-                    </div>
-                </div>
-                </div>
 
             </div>
         </main>
