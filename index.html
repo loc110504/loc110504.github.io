@@ -177,8 +177,7 @@
     </main>
 
     <footer>
-        <p>&copy; Hoang-Loc Cao. Last updated: May 2026.         Visit count:
-Visit count: <span id="visit-counter">Loading...</span>
+        <p>&copy; Hoang-Loc Cao. Last updated: May 2026.   
         </p>
     </footer>
 
@@ -189,15 +188,5 @@ Visit count: <span id="visit-counter">Loading...</span>
     <script src="scripts.js"></script>
 
 
-    <script>
-    fetch("https://api.countapi.xyz/hit/loc110504.github.io")
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("visit-counter").textContent = data.value;
-        })
-        .catch(() => {
-            document.getElementById("visit-counter").textContent = "N/A";
-        });
-</script>
 </body>
 </html>
