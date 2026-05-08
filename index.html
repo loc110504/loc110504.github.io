@@ -190,7 +190,7 @@ Visit count: <span id="visit-counter">Loading...</span>
 
 
     <script>
-    fetch("https://api.countapi.xyz/hit/loc110504.github.io/homepage")
+    fetch("https://api.countapi.xyz/hit/loc110504.github.io")
         .then(response => response.json())
         .then(data => {
             document.getElementById("visit-counter").textContent = data.value;
