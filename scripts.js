@@ -82,7 +82,6 @@ function createPublicationElement(publication) {
   // Create thumbnail
   const thumbnail = document.createElement('div');
   thumbnail.className = 'pub-thumbnail';
-  thumbnail.onclick = () => openModal(publication.thumbnail);
   
   const thumbnailImg = document.createElement('img');
   thumbnailImg.src = publication.thumbnail;
