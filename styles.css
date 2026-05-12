@@ -1,14 +1,62 @@
 :root {
-  --bg-color: #fff;
+  --bg-color: #ffffff;
   --text-color: #2d3748;
   --text-secondary: #4a5568;
   --accent-color: #4a74b9;
   --accent-hover: #3a5c9e;
-  --border-color: #e2e8f0;
+  --border-color: #e1e1e1;
   --shadow-color: rgba(0,0,0,0.05);
   --animation-offset: 3px;
   --transition-time: 0.3s;
 }
+
+/* ── Topnav ── */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247,246,242,.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+ 
+.topnav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ 
+.topnav-brand {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.topnav-brand:hover { color: var(--accent); }
+ 
+.topnav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.75rem;
+}
+ 
+.topnav-links a {
+  font-size: .84rem;
+  font-weight: 500;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  transition: color var(--transition);
+}
+.topnav-links a:hover { color: var(--accent); }
+
 
 body {
   font-family: 'Merriweather', Georgia, 'Times New Roman', serif;
