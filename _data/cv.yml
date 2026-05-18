@@ -1,0 +1,64 @@
+cv:
+  name: Hoang-Loc Cao
+  label: AI for Healthcare and Explainable AI
+  email: loc11052004@gmail.com
+  location: Ho Chi Minh City, Vietnam
+  image: ""
+  summary: B.Sc. student in Data Science at VNUHCM - University of Science.
+
+  social_networks:
+    - network: GitHub
+      username: loc110504
+    - network: LinkedIn
+      username: loccao1105
+    - network: Google Scholar
+      username: szHDzgkAAAAJ
+
+  sections:
+    Education:
+      - institution: VNUHCM - University of Science
+        location: Vietnam
+        area: Data Science
+        studyType: B.Sc.
+        start_date: 2022-09
+        end_date: 2026-09
+        highlights:
+          - Expected graduation in September 2026.
+
+    Experience:
+      - company: Machine and Hybrid Intelligence Lab, Northwestern University
+        position: Research Fellow
+        location: USA
+        start_date: 2025-09
+        end_date: present
+        highlights:
+          - Supervised by Assoc. Prof. Ulas Bagci.
+          - Researched weakly-supervised learning for medical image segmentation.
+          - Addressed imperfect medical imaging data, including limited labels, low-quality labels, and class imbalance.
+
+      - company: Analytics Everywhere Lab, University of New Brunswick
+        position: Research Assistant
+        location: Canada
+        start_date: 2025-12
+        end_date: present
+        highlights:
+          - Supervised by Asst. Prof. Hung Cao and co-supervised by Assoc. Prof. Veronica Whitford.
+          - Researched explainable mental health signal detection from social media posts.
+          - Developed a neuro-symbolic legal-reasoning framework using structured argument graphs.
+
+      - company: PASSIO Lab, North Carolina A&T State University
+        position: Research Assistant
+        location: USA
+        start_date: 2025-09
+        end_date: 2025-12
+        highlights:
+          - Advisor: Asst. Prof. Phat Kim Huynh.
+          - Researched semi-supervised multi-modal brain tumor segmentation.
+
+      - company: Quy Nhon AI Center, FPT Software
+        position: AI Intern
+        location: Vietnam
+        start_date: 2025-05
+        end_date: 2025-08
+        highlights:
+          - Developed a trustworthy multilingual interview training system powered by large language models.
