@@ -357,17 +357,14 @@ ninja.data = [{
             window.location.href = "/sample-posts/2015/03/15/formatting-and-links.html";
           
         },
-      },{id: "news-3rd-place-wbcbench-challenge-ieee-isbi-2026",
-          title: '🏅 3rd Place - WBCBench Challenge @ IEEE ISBI 2026.',
+      },{id: "news-3rd-place-of-the-wbcbench-challenge-at-ieee-isbi-2026",
+          title: '🏅 3rd Place of the WBCBench Challenge at IEEE ISBI 2026.',
           description: "",
-          section: "News",},{id: "news-papers-accepted-two-papers-accepted-at-ieee-isbi-2026",
-          title: '📝 Papers Accepted - Two papers accepted at IEEE ISBI 2026.',
+          section: "News",},{id: "news-two-papers-on-medical-imaging-accepted-at-ieee-isbi-2026",
+          title: '📝 Two papers on Medical Imaging accepted at IEEE ISBI 2026.',
           description: "",
-          section: "News",},{id: "news-paper-accepted-canadian-ai-2026",
-          title: '📝 Paper Accepted - Canadian AI 2026.',
-          description: "",
-          section: "News",},{id: "news-paper-accepted-kes-2026",
-          title: '📝 Paper Accepted - KES 2026.',
+          section: "News",},{id: "news-paper-on-neuro-symbolic-llms-reasoning-accepted-at-canadian-ai-2026",
+          title: '📝 Paper on Neuro-symbolic LLMs Reasoning accepted at Canadian AI 2026.',
           description: "",
           section: "News",},{
         id: 'social-email',
