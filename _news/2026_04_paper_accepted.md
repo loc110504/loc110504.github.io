@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-📝 **Paper Accepted** - Canadian AI 2026.
+📝 Paper on Neuro-symbolic LLMs Reasoning accepted at **Canadian AI 2026**.

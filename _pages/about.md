@@ -7,10 +7,10 @@ subtitle: B.Sc Student at <a href=https://en.hcmus.edu.vn/>VNUHCM - University o
 profile:
   align: right
   image: ava.png
-  image_circular: true # crops the image to make it circular
+  image_circular: false # keeps the image square
   more_info: >
     <p>loc11052004@gmail.com</p>
-    <p>Ho Chi Minh City, Vietnam</p>
+    <p>Ho Chi Minh, Vietnam</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -35,15 +35,31 @@ announcements:
     align-items: center;
     justify-content: center;
     gap: 0.45rem;
-    padding: 0.5rem 0.65rem;
+    padding: 0.4rem 0.55rem;
     border: 1px solid #d0d7de;
-    border-radius: 10px;
-    font-size: 0.9rem;
+    border-radius: 0;
+    font-size: 0.82rem;
     font-weight: 600;
     color: inherit;
     text-decoration: none;
     background: #f6f8fa;
     transition: all 0.2s ease;
+  }
+
+  .about-quick-link i {
+    font-size: 0.95rem;
+  }
+
+  .about-quick-link.resume-link i {
+    color: #d32f2f;
+  }
+
+  .about-quick-link.scholar-link i {
+    color: #4285f4;
+  }
+
+  .about-quick-link.github-link i {
+    color: #181717;
   }
 
   .about-quick-link:hover {
@@ -58,6 +74,10 @@ announcements:
     }
   }
 
+  .post .profile img {
+    border-radius: 0 !important;
+  }
+
   @media (max-width: 575px) {
     .about-quick-links {
       grid-template-columns: 1fr;
@@ -67,46 +87,26 @@ announcements:
 
 
 <div class="about-quick-links">
-  <a class="about-quick-link" href="/drive/resume.pdf" target="_blank" rel="noopener noreferrer">
+  <a class="about-quick-link resume-link" href="/drive/resume.pdf" target="_blank" rel="noopener noreferrer">
     <i class="fa-solid fa-file-arrow-down"></i>
     <span>Download Resume</span>
   </a>
-  <a class="about-quick-link" href="https://scholar.google.com/citations?user=szHDzgkAAAAJ" target="_blank" rel="noopener noreferrer">
+  <a class="about-quick-link scholar-link" href="https://scholar.google.com/citations?user=szHDzgkAAAAJ" target="_blank" rel="noopener noreferrer">
     <i class="ai ai-google-scholar"></i>
     <span>Google Scholar</span>
   </a>
-  <a class="about-quick-link" href="https://github.com/loc110504" target="_blank" rel="noopener noreferrer">
+  <a class="about-quick-link github-link" href="https://github.com/loc110504" target="_blank" rel="noopener noreferrer">
     <i class="fa-brands fa-github"></i>
     <span>Github &amp; Code</span>
   </a>
 </div>
 
 <p>
-  I am currently a B.Sc. student in Data Science at
+  I am currently a <strong>B.Sc. student</strong> in Data Science at
   <strong>VNUHCM - University of Science</strong>, Vietnam, working with
   <strong>Prof. Bac Le</strong>.
 </p>
 
 <p>
-  My research is motivated by a central challenge:
-  <strong>making AI reliable under the constraints of real clinical practice</strong>.
+  My research interests lie in developing <strong>trustworthy AI-powered medical solutions</strong>, with a focus on <strong>data-efficient medical image analysis</strong> and <strong>explainable multi-agent reasoning</strong>. I have experience in <strong>weakly/semi-supervised medical image segmentation</strong>, <strong>robust classification under domain shift and class imbalance</strong>, and <strong>LLM-based clinical reasoning</strong>. Moving forward, I aim to explore <strong>foundation models</strong> and <strong>human-in-the-loop AI systems</strong> to better support clinicians in real-world diagnosis, interpretation, and decision-making.
 </p>
-
-<p>
-  I develop trustworthy and powerful AI systems for healthcare, with a focus on
-  medical image analysis and explainable clinical reasoning.
-  My work addresses two key bottlenecks in clinical AI: learning robustly from
-  scarce, noisy, and heterogeneous medical annotations, and generating
-  verifiable, contestable explanations for high-stakes decisions through
-  neuro-symbolic reasoning and multi-agent collaboration.
-</p>
-
-<p>
-  By connecting these directions, my research aims to transform medical AI from
-  benchmark-optimized models into clinically responsible systems that can
-  support real-world diagnosis, reporting, and decision-making.
-</p>
-
-<div style="margin-top: 1rem; padding: 0.9rem 1rem; border-left: 5px solid #9a6700; background: #fff8db; color: #3b2f00; border-radius: 8px;">
-  🔍 I am actively seeking <strong>MSc/PhD opportunities for Fall 2027</strong> in Medical Image Analysis, with a focus on Foundation Models and Explainable AI. Feel free to reach out if you think we could work together!
-</div>

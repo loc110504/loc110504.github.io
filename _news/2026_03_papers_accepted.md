@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-📝 **Papers Accepted** - Two papers accepted at IEEE ISBI 2026.
+📝 Two papers on Medical Imaging accepted at **IEEE ISBI 2026**.

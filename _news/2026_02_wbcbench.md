@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🏅 **3rd Place** - WBCBench Challenge @ IEEE ISBI 2026.
+🏅 **3rd Place** of the **WBCBench Challenge** at IEEE ISBI 2026.

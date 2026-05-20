@@ -175,7 +175,7 @@ ul.task-list input[type="checkbox"] {
   text-align: center;
 
   .contact-icons {
-    font-size: 4rem;
+    font-size: 2.2rem;
 
     a {
       img {
@@ -198,6 +198,25 @@ ul.task-list input[type="checkbox"] {
       i::before {
         color: var(--global-text-color);
         transition-property: all 0.2s ease-in-out;
+      }
+
+      i.fa-github::before,
+      i.fa-brands.fa-github::before {
+        color: #181717;
+      }
+
+      i.fa-linkedin::before,
+      i.fa-brands.fa-linkedin::before {
+        color: #0a66c2;
+      }
+
+      i.ai-google-scholar::before {
+        color: #4285f4;
+      }
+
+      i.fa-file-arrow-down::before,
+      i.fa-solid.fa-file-arrow-down::before {
+        color: #d32f2f;
       }
 
       &:hover {
