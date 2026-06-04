@@ -52,10 +52,7 @@
     </script>
   </d-front-matter>
 
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
-    <!-- Header -->
-    {% include header.liquid %}
-
+  <body class="{% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
     <!-- Content -->
     <div class="post distill">
       <d-title>

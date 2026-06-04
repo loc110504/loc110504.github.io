@@ -2,21 +2,43 @@
 layout: default
 ---
 <div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
+  {% if page.profile %}
+    <div class="about-intro about-intro-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+      <div class="about-main">
+        <header class="post-header">
+          <div class="about-title-row">
+            <h1 class="post-title">
+              {% if site.title == 'blank' %}
+                <span class="font-weight-bold">{{ site.first_name }}</span>
+                {% if site.middle_name %} {{ site.middle_name }}{% endif %}
+                {% if site.last_name %} <span class="about-last-name">{{ site.last_name }}</span>{% endif %}
+              {% else %}
+                {{ site.title }}
+              {% endif %}
+            </h1>
+            {% if site.enable_darkmode %}
+              <button id="light-toggle" title="Change theme" aria-label="Change theme">
+                <i class="fa-half-sun-moon" id="light-toggle-system"></i>
+                <i class="fa-solid fa-moon" id="light-toggle-dark"></i>
+                <i class="fa-solid fa-sun" id="light-toggle-light"></i>
+              </button>
+            {% endif %}
+          </div>
+          <p class="desc">{{ page.subtitle }}</p>
+        </header>
 
-  <article>
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+        <div class="clearfix">{{ content }}</div>
+        <div class="about-social social">
+          <div class="contact-icons">
+            {% social_links %}
+            <a href="https://loc110504.github.io/" aria-label="CV">
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile about-profile">
         {% if page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}
@@ -36,14 +58,48 @@ layout: default
           <div class="more-info">{{ page.profile.more_info }}</div>
         {% endif %}
       </div>
-    {% endif %}
+    </div>
+  {% else %}
+    <header class="post-header">
+      <div class="about-title-row">
+        <h1 class="post-title">
+          {% if site.title == 'blank' %}
+            <span class="font-weight-bold">{{ site.first_name }}</span>
+            {% if site.middle_name %} {{ site.middle_name }}{% endif %}
+            {% if site.last_name %} <span class="about-last-name">{{ site.last_name }}</span>{% endif %}
+          {% else %}
+            {{ site.title }}
+          {% endif %}
+        </h1>
+        {% if site.enable_darkmode %}
+          <button id="light-toggle" title="Change theme" aria-label="Change theme">
+            <i class="fa-half-sun-moon" id="light-toggle-system"></i>
+            <i class="fa-solid fa-moon" id="light-toggle-dark"></i>
+            <i class="fa-solid fa-sun" id="light-toggle-light"></i>
+          </button>
+        {% endif %}
+      </div>
+      <p class="desc">{{ page.subtitle }}</p>
+      <div class="clearfix">{{ content }}</div>
+      <div class="about-social social">
+        <div class="contact-icons">
+          {% social_links %}
+          <a href="https://loc110504.github.io/" aria-label="CV">
+            <i class="fa-solid fa-file-pdf"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+  {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
-
+  <article>
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">
+          <i class="fa-regular fa-newspaper" aria-hidden="true"></i>
+          News
+        </a>
       </h2>
       {% include news.liquid limit=true %}
     {% endif %}
@@ -59,18 +115,10 @@ layout: default
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+        <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+        Selected Publications
       </h2>
       {% include selected_papers.liquid %}
-    {% endif %}
-
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% social_links %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
     {% endif %}
 
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
