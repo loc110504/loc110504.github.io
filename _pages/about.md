@@ -190,6 +190,18 @@ announcements:
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    const normalizeLabel = (value) => {
+      const normalizedValue = (value || '').toLowerCase();
+
+      if (normalizedValue.includes('github')) return 'GitHub';
+      if (normalizedValue.includes('linkedin')) return 'LinkedIn';
+      if (normalizedValue.includes('mail') || normalizedValue.includes('email')) return 'Email';
+      if (normalizedValue.includes('scholar')) return 'Google Scholar';
+      if (normalizedValue.includes('cv') || normalizedValue.includes('resume')) return 'CV';
+
+      return '';
+    };
+
     const labelFromHref = (href) => {
       const normalizedHref = (href || '').toLowerCase();
 
@@ -220,18 +232,19 @@ announcements:
       const title = link.getAttribute('title');
       const icon = link.querySelector('i');
       const label =
+        labelFromHref(link.getAttribute('href')) ||
+        labelFromIcon(icon ? icon.className : '') ||
+        normalizeLabel(link.getAttribute('aria-label')) ||
+        normalizeLabel(title) ||
         link.getAttribute('aria-label') ||
         title ||
-        labelFromHref(link.getAttribute('href')) ||
-        labelFromIcon(icon ? icon.className : '');
+        '';
 
       if (!label) return;
 
       link.dataset.label = label;
 
-      if (!link.getAttribute('aria-label')) {
-        link.setAttribute('aria-label', label);
-      }
+      link.setAttribute('aria-label', label);
 
       if (title) {
         link.removeAttribute('title');
