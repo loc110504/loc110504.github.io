@@ -2,6 +2,18 @@
     initTheme();
   </script> </head> <body class=""> <div class="container mt-5" role="main"> <div class="post"> <div class="about-intro about-intro-right"> <div class="about-main"> <header class="post-header"> <div class="about-title-row"> <h1 class="post-title"> <span class="font-weight-bold">Hoang-Loc</span> <span class="about-last-name">Cao</span> </h1> <button id="light-toggle" title="Change theme" aria-label="Change theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </div> <p class="desc"></p> </header> <div class="clearfix"> <style>.about-intro{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;margin-bottom:1.5rem}.about-intro-left{flex-direction:row-reverse}.about-intro .post-header{margin-bottom:0}.about-title-row{display:flex;align-items:center;gap:.75rem;margin-bottom:.35rem}.about-title-row .post-title{margin-bottom:0}.about-last-name{color:var(--global-text-color-light);font-weight:700}.about-title-row #light-toggle{width:2.25rem;height:2.25rem;transform:none;border-radius:999px;border:1px solid var(--global-divider-color);background:var(--global-card-bg-color);flex:0 0 auto}.about-intro .about-main{flex:1 1 0;min-width:0}.about-intro .post-header .desc{margin-bottom:.7rem}.about-intro .about-profile{flex:0 0 24%;width:24%;max-width:24%;margin:0}.about-intro .about-profile .more-info{text-align:right}.about-social{text-align:left;margin-top:.8rem;margin-bottom:1rem}.about-social .contact-icons{display:flex;align-items:center;justify-content:flex-start;gap:1.1rem;font-size:1.8rem}.about-social .contact-icons a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;position:relative}.about-social .contact-icons a i::before{transition:color .2s ease-in-out}.about-social .contact-icons a:hover i::before,.about-social .contact-icons a:focus-visible i::before{color:var(--global-theme-color)!important}.about-social .contact-icons a[data-label]::after{content:attr(data-label);position:absolute;left:50%;bottom:calc(100% + 0.55rem);transform:translateX(-50%) translateY(0.2rem);padding:.22rem .5rem;border-radius:999px;background:var(--global-card-bg-color);border:1px solid var(--global-divider-color);color:var(--global-text-color);font-size:.78rem;font-weight:600;line-height:1.2;white-space:nowrap;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s ease;z-index:10}.about-social .contact-icons a[data-label]:hover::after,.about-social .contact-icons a[data-label]:focus-visible::after{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}.about-social .contact-icons .fa-file-pdf::before{color:#d32f2f}.about-section-title{font-weight:700}@media(min-width:576px){.post .profile{width:24%}}.post .profile img{border-radius:0!important}@media(max-width:575px){.about-intro{display:block;margin-bottom:1rem}.about-intro .about-profile{width:100%;max-width:100%;margin-top:1rem}.about-intro .about-profile .more-info{text-align:left}.about-title-row{align-items:flex-start;gap:.5rem}.about-title-row .post-title{line-height:1.15}}</style> <script>
   document.addEventListener('DOMContentLoaded', () => {
+    const normalizeLabel = (value) => {
+      const normalizedValue = (value || '').toLowerCase();
+
+      if (normalizedValue.includes('github')) return 'GitHub';
+      if (normalizedValue.includes('linkedin')) return 'LinkedIn';
+      if (normalizedValue.includes('mail') || normalizedValue.includes('email')) return 'Email';
+      if (normalizedValue.includes('scholar')) return 'Google Scholar';
+      if (normalizedValue.includes('cv') || normalizedValue.includes('resume')) return 'CV';
+
+      return '';
+    };
+
     const labelFromHref = (href) => {
       const normalizedHref = (href || '').toLowerCase();
 
@@ -32,18 +44,19 @@
       const title = link.getAttribute('title');
       const icon = link.querySelector('i');
       const label =
+        labelFromHref(link.getAttribute('href')) ||
+        labelFromIcon(icon ? icon.className : '') ||
+        normalizeLabel(link.getAttribute('aria-label')) ||
+        normalizeLabel(title) ||
         link.getAttribute('aria-label') ||
         title ||
-        labelFromHref(link.getAttribute('href')) ||
-        labelFromIcon(icon ? icon.className : '');
+        '';
 
       if (!label) return;
 
       link.dataset.label = label;
 
-      if (!link.getAttribute('aria-label')) {
-        link.setAttribute('aria-label', label);
-      }
+      link.setAttribute('aria-label', label);
 
       if (title) {
         link.removeAttribute('title');
