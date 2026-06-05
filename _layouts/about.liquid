@@ -31,7 +31,7 @@ layout: default
         <div class="about-social social">
           <div class="contact-icons">
             {% social_links %}
-            <a href="https://loc110504.github.io/" aria-label="CV">
+            <a href="https://loc110504.github.io/" aria-label="CV" data-label="CV">
               <i class="fa-solid fa-file-pdf"></i>
             </a>
           </div>
@@ -84,7 +84,7 @@ layout: default
       <div class="about-social social">
         <div class="contact-icons">
           {% social_links %}
-          <a href="https://loc110504.github.io/" aria-label="CV">
+          <a href="https://loc110504.github.io/" aria-label="CV" data-label="CV">
             <i class="fa-solid fa-file-pdf"></i>
           </a>
         </div>
@@ -114,8 +114,7 @@ layout: default
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
-      <h2>
-        <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+      <h2 class="about-section-title">
         Selected Publications
       </h2>
       {% include selected_papers.liquid %}
