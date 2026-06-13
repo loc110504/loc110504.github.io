@@ -70,9 +70,9 @@ announcements:
   }
 
   .about-intro .about-profile {
-    flex: 0 0 24%;
-    width: 24%;
-    max-width: 24%;
+    flex: 0 0 21%;
+    width: 21%;
+    max-width: 21%;
     margin: 0;
   }
 
@@ -153,11 +153,14 @@ announcements:
 
   @media (min-width: 576px) {
     .post .profile {
-      width: 24%;
+      width: 21%;
     }
   }
 
   .post .profile img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
     border-radius: 0 !important;
   }
 
@@ -257,6 +260,6 @@ announcements:
   I am currently a B.Sc. student in Data Science at
   <a href="https://en.hcmus.edu.vn/">VNUHCM - University of Science</a>, Vietnam, working with
   <a href="https://scholar.google.com.vn/citations?hl=en&user=UA_83MUAAAAJ&view_op=list_works&sortby=pubdate">Prof. Bac Le</a>. <br>
-  My research focuses on Trustworthy AI, Computer Vision, Medical Image Analysis, and Agentic AI. <br>
+  My research focuses on Learning with Limited and Imperfect Data for Medical Image Analysis and Agentic AI (including Multi-Agent Systems and Continual Learning). <br>
  Email: <strong>loc11052004@gmail.com</strong> or <strong>chloc22@clc.fitus.edu.vn</strong>
 </p>

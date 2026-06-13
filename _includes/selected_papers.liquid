@@ -1,3 +1,55 @@
-<div class="publications">
-  {% bibliography --group_by none --query @*[selected=true]* %}
+<div class="publications publication-browser" data-default-filter="selected">
+  <div class="publication-filter" role="tablist" aria-label="Publication filters">
+    <button
+      type="button"
+      class="publication-filter-button is-active"
+      data-publication-filter="selected"
+      aria-pressed="true"
+    >
+      Selected
+    </button>
+    <button
+      type="button"
+      class="publication-filter-button"
+      data-publication-filter="all"
+      aria-pressed="false"
+    >
+      All
+    </button>
+  </div>
+
+  {% bibliography --group_by none %}
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.publication-browser').forEach((browser) => {
+      const buttons = browser.querySelectorAll('[data-publication-filter]');
+      const items = browser.querySelectorAll('ol.bibliography > li');
+
+      if (!buttons.length || !items.length) return;
+
+      const applyFilter = (filter) => {
+        items.forEach((item) => {
+          const card = item.querySelector('.publication-card');
+          const isSelected = card && card.dataset.selected === 'true';
+          const shouldShow = filter === 'all' || isSelected;
+
+          item.hidden = !shouldShow;
+        });
+
+        buttons.forEach((button) => {
+          const isActive = button.dataset.publicationFilter === filter;
+          button.classList.toggle('is-active', isActive);
+          button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+      };
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => applyFilter(button.dataset.publicationFilter));
+      });
+
+      applyFilter(browser.dataset.defaultFilter || 'selected');
+    });
+  });
+</script>
