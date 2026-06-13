@@ -1,57 +1,8 @@
 ---
 ---
-{% assign has_preview = false %}
-{% if site.enable_publication_thumbnails and entry.preview %}
-  {% assign has_preview = true %}
-{% endif %}
-<div class="row publication-card" data-selected="{{ entry.selected | default: 'false' }}">
-  {% if has_preview %}
-    <div class="col-12 col-md-3 abbr">
-      <div class="preview-wrapper">
-        {% assign preview_is_pdf = false %}
-        {% if entry.preview contains '.pdf' %}
-          {% assign preview_is_pdf = true %}
-        {% endif %}
-
-        {% if preview_is_pdf %}
-          {% if entry.preview contains '://' %}
-            <object class="preview preview-pdf" data="{{ entry.preview }}" type="application/pdf" aria-label="{{ entry.title }} preview">
-              <a href="{{ entry.preview }}" target="_blank" rel="noopener">Open PDF preview</a>
-            </object>
-          {% else %}
-            <object
-              class="preview preview-pdf"
-              data="{{ entry.preview | prepend: '/assets/img/publication_preview/' | relative_url }}"
-              type="application/pdf"
-              aria-label="{{ entry.title }} preview"
-            >
-              <a href="{{ entry.preview | prepend: '/assets/img/publication_preview/' | relative_url }}" target="_blank" rel="noopener">Open PDF preview</a>
-            </object>
-          {% endif %}
-        {% elsif entry.preview contains '://' %}
-          <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
-        {% else %}
-          {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
-          {%
-            include figure.liquid
-            loading="eager"
-            path=entry_path
-            sizes = "200px"
-            class="preview z-depth-1 rounded"
-            zoomable=true
-            avoid_scaling=true
-            alt=entry.preview
-          %}
-        {% endif %}
-      </div>
-    </div>
-  {% endif %}
-
+<div class="publication-card" data-selected="{{ entry.selected | default: 'false' }}">
   <!-- Entry bib key -->
-  <div
-    id="{{ entry.key }}"
-    class="{% if has_preview %}col-12 col-md-9{% else %}col-12 col-md-9 offset-md-3{% endif %} publication-content"
-  >
+  <div id="{{ entry.key }}" class="publication-content">
     <!-- Title -->
     <div class="title">{{ entry.title }}</div>
     <!-- Author -->
