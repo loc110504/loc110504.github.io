@@ -2,41 +2,52 @@
  * Publication and bibliography styles
  ******************************************************************************/
 
+@use "sass:color";
 @use "variables" as v;
 
 .publications {
   margin-top: 2rem;
 
+  $publication-accent: #123c73;
+  $publication-accent-soft: #e8f0fb;
+
   .publication-filter {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: 0;
     margin-bottom: 1.25rem;
-    padding: 0.25rem;
-    border: 1px solid var(--global-divider-color);
-    border-radius: 999px;
-    background: var(--global-card-bg-color);
+    padding: 0.2rem;
+    border: 1px solid rgba($publication-accent, 0.18);
+    border-radius: 0;
+    background: #fff;
+    overflow: hidden;
   }
 
   .publication-filter-button {
     border: 0;
     background: transparent;
-    color: var(--global-text-color-light);
+    color: $publication-accent;
     cursor: pointer;
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     font-weight: 700;
     line-height: 1;
-    padding: 0.6rem 0.95rem;
-    border-radius: 999px;
+    padding: 0.7rem 1.1rem;
+    border-radius: 0;
     transition:
       background-color 0.2s ease,
       color 0.2s ease,
       box-shadow 0.2s ease;
 
+    &:hover,
+    &:focus-visible {
+      background: $publication-accent-soft;
+      outline: none;
+    }
+
     &.is-active {
-      background: var(--global-theme-color);
+      background: $publication-accent;
       color: #fff;
-      box-shadow: 0 10px 24px rgba(11, 61, 145, 0.18);
+      box-shadow: none;
     }
   }
 
@@ -66,17 +77,13 @@
 
   ol.bibliography {
     list-style: disc;
-    padding-left: 1.25rem;
+    padding-left: 1.35rem;
     margin-top: 0;
 
     li {
-      margin-bottom: 1rem;
-      padding-left: 0.15rem;
-
-      &::marker {
-        color: var(--global-text-color-light);
-        font-size: 0.8rem;
-      }
+      position: relative;
+      margin-bottom: 1.15rem;
+      padding: 0 0 0.2rem 0.2rem;
 
       .publication-card {
         display: block;
@@ -88,17 +95,34 @@
         justify-content: center;
       }
 
+      .citation-line {
+        display: block;
+        line-height: 1.85;
+        font-size: 1rem;
+      }
+
       .title {
-        font-weight: bolder;
+        font-weight: 800;
+        color: var(--global-text-color);
+      }
+
+      .venue {
+        font-style: italic;
+        color: var(--global-text-color);
+      }
+
+      .year {
+        color: var(--global-text-color-light);
       }
 
       .author {
         a {
-          border-bottom: 1px dashed var(--global-theme-color);
+          color: $publication-accent;
+          border-bottom: 1px solid rgba($publication-accent, 0.3);
 
           &:hover {
-            border-bottom-style: solid;
             text-decoration: none;
+            border-bottom-color: $publication-accent;
           }
         }
 
@@ -119,29 +143,49 @@
         }
       }
 
+      .publication-note {
+        margin-top: 0.35rem;
+        color: var(--global-text-color-light);
+        font-size: 0.92rem;
+      }
+
+      a:not(.btn) {
+        color: $publication-accent;
+
+        &:hover {
+          color: color.adjust($publication-accent, $lightness: -6%);
+        }
+      }
+
       .links {
+        display: inline;
+        margin-left: 0.2rem;
+
         a.btn {
-          color: var(--global-text-color);
-          border: 1px solid var(--global-text-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
-          padding-top: 0.25rem;
-          padding-bottom: 0.25rem;
-          margin-left: 0;
+          display: inline;
+          color: $publication-accent;
+          border: 0;
+          padding: 0;
+          margin: 0 0.12rem 0 0;
+          min-width: 0;
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: inherit;
+          vertical-align: baseline;
 
           &:hover {
-            color: var(--global-theme-color);
-            border-color: var(--global-theme-color);
+            color: color.adjust($publication-accent, $lightness: -6%);
+            text-decoration: underline;
           }
         }
 
         a.award.btn {
-          border-color: var(--global-highlight-color);
+          color: var(--global-highlight-color);
         }
       }
 
       .badges {
-        padding-bottom: 0.5rem;
+        margin-top: 0.5rem;
         span {
           display: inline-block;
           color: v.$black-color;
@@ -207,7 +251,8 @@
     .publication-filter {
       display: flex;
       width: 100%;
-      border-radius: 1rem;
+      gap: 0;
+      padding: 0.2rem;
     }
 
     .publication-filter-button {
@@ -217,6 +262,10 @@
 
     ol.bibliography li .abbr {
       margin-bottom: 1rem;
+    }
+
+    ol.bibliography li {
+      padding-left: 0.1rem;
     }
   }
 }
