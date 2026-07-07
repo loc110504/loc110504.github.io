@@ -80,3 +80,22 @@ div.lazy {
 .email-text {
   font-family: Courier, monospace;
 }
+
+.profile-affiliation i {
+  color: #f4a92a;
+  margin-right: 0.35rem;
+}
+
+.profile-portrait-wrap {
+  margin-left: -0.5rem;
+}
+
+.opportunity-banner {
+  background: #fff8e1;
+  border-left: 4px solid #f4a92a;
+  border-radius: 10px;
+  color: #000000;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 0.75rem 1rem;
+}
