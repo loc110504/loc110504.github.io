@@ -1,0 +1,31 @@
+primary_name: "Hoang-Loc Cao"
+secondary_name: ""
+navbar_name: "Hoang-Loc Cao"
+
+positions:
+  - name: Affiliated with University of Science - VNUHCM
+
+email: "loc11052004@gmail.com"
+gscholar: szHDzgkAAAAJ
+github: loc110504
+linkedin: loccao1105
+
+short_bio_text_justify: false
+short_bio: <div>
+  <p>
+    Hi, my name is Hoang-Loc Cao.I am a B.Sc. student in Data Science at VNUHCM - University of Science, Vietnam, advised by Professor <a href="https://scholar.google.com.vn/citations?hl=en&user=UA_83MUAAAAJ&view_op=list_works&sortby=pubdate">Bac Le</a>.
+  </p>
+  <p>
+    My research interests focus on Medical Image Analysis, with a particular emphasis on data-efficient learning, foundation models and explainable AI. Moreover, I am interested in Agentic AI, including continual learning and reinforcement learning for multi-agent systems.
+  </p>
+  </div>
+portrait_url: /assets/images/photos/hoang-loc-cao.png
+
+education:
+  - name: VNUHCM - University of Science
+    position: B.S. in Information Technology, Data Science
+    date: Sep. 2022 - Sep. 2026 (expected)
+
+awards:
+  - name: 3rd Place, WBCBench Challenge at IEEE ISBI
+    date: 2026
