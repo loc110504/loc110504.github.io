@@ -2,11 +2,10 @@
 title: "Scribble-Supervised Medical Image Segmentation with Dynamic Teacher Switching and Hierarchical Consistency"
 date: 2026-03-01 00:01:00 +0800
 selected: true
+selected_order: 1
 pub: "IEEE 23rd International Symposium on Biomedical Imaging"
 pub_date: "2026"
 pub_post: " (ISBI)"
-
-cover: /assets/images/covers/sdtnet.png
 authors:
   - Thanh-Huy Nguyen*
   - admin*

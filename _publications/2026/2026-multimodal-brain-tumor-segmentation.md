@@ -5,8 +5,6 @@ selected: false
 pub: "AI for Medicine and Healthcare Bridge Program"
 pub_date: "2026"
 pub_post: " (AAAI)"
-
-cover: /assets/images/covers/aimedhealth26.png
 authors:
   - Tien-Dat Chung*
   - Ba-Thinh Lam*

@@ -6,8 +6,6 @@ pin_all: true
 pub: "IEEE International Conference on Omni-Layer Intelligent Systems"
 pub_date: "2026"
 pub_post: " (COINS)"
-
-cover: /assets/images/covers/DSM.png
 authors:
   - admin*
   - Van Pham*

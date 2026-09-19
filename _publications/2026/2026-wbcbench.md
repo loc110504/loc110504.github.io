@@ -2,11 +2,10 @@
 title: "Robust White Blood Cell Classification with Stain-Normalized Decoupled Learning and Ensembling"
 date: 2026-03-01 00:01:00 +0800
 selected: true
+selected_order: 2
 pub: "IEEE 23rd International Symposium on Biomedical Imaging"
 pub_date: "2026"
 pub_post: " (ISBI)"
-
-cover: /assets/images/covers/long-tailed.png
 authors:
   - Luu Le*
   - admin*

@@ -25,7 +25,49 @@ education:
   - name: VNUHCM - University of Science
     position: B.S. in Information Technology, Data Science
     date: Sep. 2022 - Sep. 2026 (expected)
+    details:
+      - "Thesis: Explainable AI for Text-Based Depression Detection (10.0/10.0)"
+      - "Advisor: Prof. Bac Le"
+      - "GPA: 3.63/4.0"
 
-awards:
-  - name: 3rd Place, WBCBench Challenge at IEEE ISBI
-    date: 2026
+experience:
+  - name: AIMA Research Lab
+    position: Research Assistant
+    dept: "Advisor: MSc. Thanh-Huy Nguyen, Assoc. Prof. Ulas Bagci (Northwestern Univ.)"
+    location: Remote
+    date: Sep. 2025 - Present
+    details:
+      - "Research topics: medical image analysis, label-efficient learning"
+      - "Developed SDT-Net, a dual-teacher framework for scribble-supervised medical image segmentation via dynamic teacher switching and hierarchical feature consistency"
+      - "Developed a decoupled training strategy addressing domain shift and class imbalance for White Blood Cell classification, achieving 3rd place at WBCBench - IEEE ISBI 2026 Challenge"
+  - name: Analytics Everywhere Lab, University of New Brunswick
+    position: Research Assistant
+    dept: "Advisor: Prof. Hung Cao"
+    location: Fredericton, Canada (Remote)
+    date: Aug. 2025 - Present
+    details:
+      - "Research topics: explainable AI, agentic AI, AI for healthcare"
+      - "Led the lab team in the BIC-MAC Challenge (MICCAI 2026) on multimodal 3D pseudo-CT synthesis for PET attenuation correction, achieving 1st place"
+      - "Designed a self-evolving human-centered framework for explainable depression symptom annotation, reducing expert annotation overhead by up to 75%"
+      - "Conducted research on neuro-symbolic reasoning for multi-agent collaboration across care planning, legal reasoning, and multimedia verification"
+  - name: Faculty of Information Technology, University of Science, VNU-HCM
+    position: Undergraduate Research Assistant (Graduation Thesis)
+    dept: "Advisor: Prof. Bac Le"
+    location: Ho Chi Minh, Vietnam
+    date: Sep. 2025 - Sep. 2026
+    details:
+      - "Conducted research on explainable AI for NLP, multi-agent systems, and self-evolving systems"
+      - "Developed a computational argumentation-based multi-agent collaboration framework for explainable depression detection"
+  - name: PASSIO Lab, North Carolina A&T State University
+    position: Research Assistant
+    dept: "Advisor: Asst. Prof. Phat Kim Huynh"
+    location: Remote
+    date: Sep. 2025 - Dec. 2025
+    details:
+      - "Assisted a semi-supervised multi-modal brain tumor segmentation project, supporting development and evaluation of the proposed method under limited labeled data"
+  - name: Quy Nhon AI Center, FPT Software
+    position: AI Engineer Intern
+    location: Gia Lai, Vietnam
+    date: May 2025 - Aug. 2025
+    details:
+      - "Implemented a trustworthy multilingual interview training system powered by Large Language Models"
