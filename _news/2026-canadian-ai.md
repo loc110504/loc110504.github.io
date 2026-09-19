@@ -1,4 +1,4 @@
 ---
-title: My paper ACAL was accepted to Canadian AI 2026
+title: "My paper <strong>ACAL</strong> was accepted to <strong>Canadian AI 2026</strong>"
 date: 2026-04-01
 ---
