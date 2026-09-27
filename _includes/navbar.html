@@ -4,7 +4,7 @@
 >
   <div class="container">
     <a class="navbar-brand myst-brand" href="{{ '/' | relative_url }}"
-      >{{ site.data.profile.navbar_name }}</a
+      >{{ site.data.profile.navbar_name | replace: '-', '<span class="myst-dash">-</span>' }}</a
     >
     <button
       class="navbar-toggler myst-toggler"

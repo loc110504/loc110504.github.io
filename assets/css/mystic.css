@@ -369,6 +369,11 @@ button:focus-visible,
   color: var(--myst-moonlight);
 }
 
+.myst-dash {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: normal;
+}
+
 .myst-hero-secondary {
   display: block;
   font-size: 1.1rem;

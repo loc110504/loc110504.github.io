@@ -10,7 +10,7 @@
       <div class="myst-hero-col">
         <div class="myst-hero-content">
           <h1 class="myst-hero-name myst-reveal myst-d1">
-            {{ site.data.profile.primary_name }}
+            {{ site.data.profile.primary_name | replace: '-', '<span class="myst-dash">-</span>' }}
             {% if site.data.profile.secondary_name and site.data.profile.secondary_name != "" %}
             <span class="myst-hero-secondary">{{ site.data.profile.secondary_name }}</span>
             {% endif %}
