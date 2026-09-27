@@ -5,7 +5,5 @@ pages:
     url: /
   - name: Research
     url: /research
-  - name: Publications
-    url: /publications
   - name: CV
     url: /experience

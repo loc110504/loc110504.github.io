@@ -1,0 +1,29 @@
+{% assign edu = site.data.profile.education | first %}
+{% assign exp = site.data.profile.experience | slice: 0, 3 %}
+
+<section class="myst-panel myst-journey-teaser" id="academic-journey" data-reveal style="scroll-margin-top: 6rem;">
+  <h2 class="myst-panel-heading"><i class="fas fa-route" aria-hidden="true"></i> Academic Journey</h2>
+  <div class="myst-journey-rows">
+    {% if edu %}
+    <div class="myst-journey-row">
+      <span class="myst-journey-date">{{ edu.date }}</span>
+      <span class="myst-journey-role">{{ edu.position }}</span>
+      <span class="myst-journey-inst">
+        {{ edu.name }}{% if edu.location %} &middot; {{ edu.location }}{% endif %}
+      </span>
+    </div>
+    {% endif %}
+    {% for item in exp %}
+    <div class="myst-journey-row">
+      <span class="myst-journey-date">{{ item.date }}</span>
+      <span class="myst-journey-role">{{ item.position }}</span>
+      <span class="myst-journey-inst">
+        {{ item.name }}{% if item.location %} &middot; {{ item.location }}{% endif %}
+      </span>
+    </div>
+    {% endfor %}
+  </div>
+  <a href="{{ '/experience' | relative_url }}" class="myst-btn myst-btn-ghost">
+    View CV <i class="fas fa-arrow-right" aria-hidden="true"></i>
+  </a>
+</section>

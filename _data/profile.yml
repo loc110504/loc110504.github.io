@@ -13,10 +13,7 @@ linkedin: loccao1105
 short_bio_text_justify: false
 short_bio: <div>
   <p>
-    Hi, my name is Hoang-Loc Cao.I am a B.Sc. student in Data Science at VNUHCM - University of Science, Vietnam, advised by Professor <a href="https://scholar.google.com.vn/citations?hl=en&user=UA_83MUAAAAJ&view_op=list_works&sortby=pubdate">Bac Le</a>.
-  </p>
-  <p>
-    My research interests focus on Medical Image Analysis, with a particular emphasis on data-efficient learning, foundation models and explainable AI. Moreover, I am interested in Agentic AI, including continual learning and reinforcement learning for multi-agent systems.
+    My research interests focus on Medical Image Analysis, with a particular emphasis on data-efficient learning, foundation models and explainable AI. Moreover, I am interested in Agentic Self-Improving AI, including continual learning and reinforcement learning for multi-agent systems.
   </p>
   </div>
 portrait_url: /assets/images/photos/hoang-loc-cao.png

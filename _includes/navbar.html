@@ -1,13 +1,13 @@
 <nav
-  class="navbar navbar-expand-sm navbar-light bg-light fixed-top mb-5 shadow-sm"
+  class="navbar navbar-expand-sm myst-navbar fixed-top mb-5"
+  aria-label="Primary"
 >
   <div class="container">
-    <a class="navbar-brand"
-      ><strong>{{site.data.profile.navbar_name}}</strong></a
+    <a class="navbar-brand myst-brand" href="{{ '/' | relative_url }}"
+      >{{ site.data.profile.navbar_name }}</a
     >
     <button
-      class="navbar-toggler"
-      style="font-size: 1em; padding: 0.5em"
+      class="navbar-toggler myst-toggler"
       type="button"
       data-toggle="collapse"
       data-target="#navbarResponsive"
@@ -15,16 +15,16 @@
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <i class="fas fa-map"></i> Menu
+      <span class="myst-toggler-icon" aria-hidden="true"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         {% for item in site.data.navigation.pages %}
         <li
-          class="nav-item {% if item.name == page.navbar_title %}active{% endif %}"
+          class="nav-item myst-nav-item {% if item.name == page.navbar_title %}active{% endif %}"
         >
-          <a class="nav-link" href="{{ item.url | relative_url }}"
+          <a class="nav-link myst-nav-link" href="{{ item.url | relative_url }}"
             >{{ item.name }}</a
           >
         </li>

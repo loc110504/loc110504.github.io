@@ -31,7 +31,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Cinzel:wght@500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap"
       rel="stylesheet"
     />
     <link
@@ -44,6 +44,16 @@
       rel="stylesheet"
       href="{{ '/assets/css/global.css' | relative_url }}"
     />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/mystic.css' | relative_url }}"
+    />
+    {% if page.navbar_title == "Research" %}
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/research-mystic.css' | relative_url }}"
+    />
+    {% endif %}
   </head>
   <body class="bg-light" {{ page.body_attr }}>
     {% include navbar.html %}
@@ -95,5 +105,9 @@
     </script>
     <script src="{{ '/assets/js/common.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/bubble_visual_hash.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/mystic.js' | relative_url }}"></script>
+    {% if page.navbar_title == "Research" %}
+    <script src="{{ '/assets/js/research-mystic.js' | relative_url }}"></script>
+    {% endif %}
   </body>
 </html>

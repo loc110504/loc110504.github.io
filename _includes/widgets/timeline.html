@@ -1,61 +1,93 @@
-<div class="row mt-3">
-  <div class="col">
-    <div class="card border-0 shadow-sm bg-white">
-      <div class="card-body p-4 p-md-5">
+<header class="myst-page-header" data-reveal>
+  <p class="myst-eyebrow">Academic Journey</p>
+  <h1 class="myst-page-title">Curriculum Vitae</h1>
+</header>
 
-        {% if site.data.profile.education %}
-        <h5 class="mb-4"><i class="fas fa-graduation-cap"></i> Education</h5>
-        <div class="timeline mb-5">
-          {% for item in site.data.profile.education %}
-          <div class="timeline-item">
-            <div class="timeline-date">{{ item.date }}</div>
-            <div class="d-flex flex-wrap align-items-baseline">
-              <div class="timeline-title mr-2">{{ item.name }}</div>
-              {% if item.location %}
-              <div class="small text-muted">{{ item.location }}</div>
-              {% endif %}
-            </div>
-            <div class="timeline-subtitle">{{ item.position }}</div>
-            {% if item.details %}
-            <ul class="small text-muted mt-2 mb-0 pl-3">
-              {% for detail in item.details %}
-              <li>{{ detail }}</li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-          </div>
-          {% endfor %}
+<div class="myst-cv">
+  {% if site.data.profile.education %}
+  <div class="myst-cv-block" data-reveal>
+    <h2 class="myst-cv-heading"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Education</h2>
+    <div class="myst-rail">
+      <div class="myst-rail-track" aria-hidden="true"><div class="myst-rail-fill"></div></div>
+      {% for item in site.data.profile.education %}
+      <div class="myst-rail-item">
+        <div class="myst-rail-marker" aria-hidden="true"></div>
+        <div class="myst-rail-date">{{ item.date }}</div>
+        <div class="myst-rail-title">{{ item.position }}</div>
+        <div class="myst-rail-sub">
+          {{ item.name }}{% if item.location %} &middot; {{ item.location }}{% endif %}
         </div>
+        {% if item.details %}
+        {% for detail in item.details %}
+        {% if detail contains "Thesis" or detail contains "thesis" %}
+        <div class="myst-rail-note">{{ detail }}</div>
         {% endif %}
-
-        {% if site.data.profile.experience %}
-        <h5 class="mb-4"><i class="fas fa-briefcase"></i> Experience</h5>
-        <div class="timeline">
-          {% for item in site.data.profile.experience %}
-          <div class="timeline-item">
-            <div class="timeline-date">{{ item.date }}</div>
-            <div class="d-flex flex-wrap align-items-baseline">
-              <div class="timeline-title mr-2">{{ item.name }}</div>
-              {% if item.location %}
-              <div class="small text-muted">{{ item.location }}</div>
-              {% endif %}
-            </div>
-            <div class="timeline-subtitle">
-              {{ item.position }}{% if item.dept %} &middot; {{ item.dept }}{% endif %}
-            </div>
-            {% if item.details %}
-            <ul class="small text-muted mt-2 mb-0 pl-3">
-              {% for detail in item.details %}
-              <li>{{ detail }}</li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-          </div>
-          {% endfor %}
-        </div>
+        {% endfor %}
         {% endif %}
-
       </div>
+      {% endfor %}
     </div>
   </div>
+  {% endif %}
+
+  {% if site.data.profile.experience %}
+  <div class="myst-cv-block" data-reveal>
+    <h2 class="myst-cv-heading"><i class="fas fa-briefcase" aria-hidden="true"></i> Experience</h2>
+    <div class="myst-rail">
+      <div class="myst-rail-track" aria-hidden="true"><div class="myst-rail-fill"></div></div>
+      {% for item in site.data.profile.experience %}
+      <div class="myst-rail-item">
+        <div class="myst-rail-marker" aria-hidden="true"></div>
+        <div class="myst-rail-date">{{ item.date }}</div>
+        <div class="myst-rail-title">{{ item.position }}</div>
+        <div class="myst-rail-sub">
+          {{ item.name }}{% if item.location %} &middot; {{ item.location }}{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if site.data.profile.honors %}
+  <div class="myst-cv-block" data-reveal>
+    <h2 class="myst-cv-heading"><i class="fas fa-award" aria-hidden="true"></i> Honors &amp; Awards</h2>
+    <div class="myst-rail">
+      <div class="myst-rail-track" aria-hidden="true"><div class="myst-rail-fill"></div></div>
+      {% for item in site.data.profile.honors %}
+      <div class="myst-rail-item">
+        <div class="myst-rail-marker" aria-hidden="true"></div>
+        <div class="myst-rail-date">{{ item.date }}</div>
+        <div class="myst-rail-title">{{ item.title }}</div>
+        {% if item.org %}<div class="myst-rail-sub">{{ item.org }}</div>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if site.data.profile.service %}
+  <div class="myst-cv-block" data-reveal>
+    <h2 class="myst-cv-heading"><i class="fas fa-users" aria-hidden="true"></i> Academic Service</h2>
+    <div class="myst-rail">
+      <div class="myst-rail-track" aria-hidden="true"><div class="myst-rail-fill"></div></div>
+      {% for item in site.data.profile.service %}
+      <div class="myst-rail-item">
+        <div class="myst-rail-marker" aria-hidden="true"></div>
+        <div class="myst-rail-date">{{ item.date }}</div>
+        <div class="myst-rail-title">{{ item.role }}</div>
+        {% if item.venue %}<div class="myst-rail-sub">{{ item.venue }}</div>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if site.data.profile.cv_link %}
+  <div class="myst-cv-action" data-reveal>
+    <a class="myst-btn" target="_blank" href="{{ site.data.profile.cv_link | relative_url }}">
+      <i class="fas fa-file-alt" aria-hidden="true"></i> View Full CV
+    </a>
+  </div>
+  {% endif %}
 </div>

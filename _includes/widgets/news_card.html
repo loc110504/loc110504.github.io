@@ -1,18 +1,18 @@
 {% assign news_by_year = site.news | sort: "date" | reverse | slice: 0,
 include.limit | group_by_exp: "item", "item.date | date: '%Y'" -%}
 
-<div class="my-3 bg-white shadow-sm rounded-sm">
-  <h6 class="p-3 mb-0 border-bottom border-dark">
-    <i class="fas fa-rss"></i> News
-  </h6>
-  <div class="px-3 py-2">
+<section class="myst-panel myst-news" id="news" data-reveal>
+  <h2 class="myst-panel-heading"><i class="fas fa-scroll" aria-hidden="true"></i> News</h2>
+  <div class="myst-chronicle">
     {% for year in news_by_year %}
-    <div class="news-year">{{ year.name }}</div>
+    <div class="myst-chronicle-year">{{ year.name }}</div>
     {% for item in year.items %}
-    <div class="news-item">
-      <span class="news-date">{{ item.date | date: "%b %d" }}</span>
-      <span class="news-title">{{ item.title }}</span>
+    <div class="myst-chronicle-item">
+      <span class="myst-chronicle-seal" aria-hidden="true"></span>
+      <span class="myst-chronicle-date">{{ item.date | date: "%b %d" }}</span>
+      <span class="myst-chronicle-text">{{ item.title }}</span>
     </div>
-    {% endfor %} {% endfor %}
+    {% endfor %}
+    {% endfor %}
   </div>
-</div>
+</section>

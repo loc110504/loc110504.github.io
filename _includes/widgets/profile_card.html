@@ -1,155 +1,102 @@
-<div class="row">
-  <div class="col">
-    <div class="card border-0 shadow-sm bg-white">
-      <div class="card-body p-5">
-        <div class="row align-items-start">
-          <div class="col-md-8 col-lg-9">
-            <div class="d-flex">
-              <div class="h1 font-weight-normal">
-                {{ site.data.profile.primary_name }}
-                <small>{{ site.data.profile.secondary_name }}</small>
-              </div>
-              {% if site.data.profile.portrait_url %}
-              <div class="ml-auto d-md-none">
-                <a
-                  target="_blank"
-                  href="{{ site.data.profile.portrait_url | relative_url }}"
-                >
-                  <img
-                    src="{{ site.data.profile.portrait_url | relative_url }}"
-                    class="rounded-circle"
-                    style="height: 64px"
-                    alt="Portrait"
-                  />
-                </a>
-              </div>
-              {% endif %}
-            </div>
-            <div class="text-profile-position">
-              {% for position in site.data.profile.positions %} {% if
-              position.logo -%}
-              <img
-                src="{{ position.logo | relative_url }}"
-                alt="Logo"
-                class="inline-badge"
-              />
-              {%- endif %}
-              <span class="profile-affiliation">
-                <i class="fas fa-user-graduate"></i> {{ position.name }}
-              </span>
-              <br />
-              {% endfor %}
-            </div>
-            <div
-              class="text-profile-bio mt-3"
-              {%
-              if
-              site.data.profile.short_bio_text_justify
-              %}style="text-align: justify;"
-              {%
-              endif
-              %}
-            >
-              {{ site.data.profile.short_bio }}
-            </div>
-            <div class="opportunity-banner mt-4">
-              I work on <strong>Deep Learning, Computer Vision, Medical Image
-              Analysis, and Self-Improving AI Systems</strong>. If you'd like
-              to discuss ideas or explore a collaboration, feel free to reach
-              out via email or LinkedIn!
-            </div>
-            {% if site.data.profile.cv_link %}
-            <a
-              target="_blank"
-              href="{{ site.data.profile.cv_link | relative_url }}"
-              ><i class="fas fa-file-alt"></i> Curriculum Vitae</a
-            >
-            <br />
+<section class="myst-hero" id="hero">
+  <div class="myst-hero-sky" aria-hidden="true"></div>
+  <div class="myst-hero-vignette" aria-hidden="true"></div>
+  <div class="myst-hero-grain" aria-hidden="true"></div>
+  <div class="myst-lantern" id="myst-lantern" aria-hidden="true"></div>
+  <div class="myst-particles" data-particles aria-hidden="true"></div>
+
+  <div class="container myst-hero-inner">
+    <div class="myst-hero-row">
+      <div class="myst-hero-col">
+        <div class="myst-hero-content">
+          <h1 class="myst-hero-name myst-reveal myst-d1">
+            {{ site.data.profile.primary_name }}
+            {% if site.data.profile.secondary_name and site.data.profile.secondary_name != "" %}
+            <span class="myst-hero-secondary">{{ site.data.profile.secondary_name }}</span>
             {% endif %}
+          </h1>
+
+          <div
+            class="myst-hero-bio myst-reveal myst-d3 {% if site.data.profile.short_bio_text_justify %}myst-bio-justify{% endif %}"
+          >
+            {{ site.data.profile.short_bio }}
           </div>
-          {% if site.data.profile.portrait_url %}
-          <div class="col-md-4 col-lg-3 d-none d-md-flex justify-content-md-end">
-            <div class="figure mb-0 profile-portrait-wrap">
-              <img
-                src="{{ site.data.profile.portrait_url | relative_url }}"
-                class="figure-img img-fluid img-thumbnail"
-                style="height: 300px"
-                data-toggle="tooltip"
-                data-placement="top"
-                title="{{ site.data.profile.portrait_caption }}"
-              />
-            </div>
+
+          <div class="myst-hero-focus myst-reveal myst-d4">
+            I work on <strong>Deep Learning, Computer Vision, Medical Image Analysis, and
+            Self-Improving AI Systems</strong>. If you'd like to discuss ideas or explore a
+            collaboration, feel free to reach out via email or LinkedIn.
           </div>
-          {% endif %}
-        </div>
-        <hr />
-        <div class="row">
-          <div class="col">
-            <a
-              class="pr-3 no-break"
-              href="mailto:{{ site.data.profile.email | encode_email }}"
-            >
-              <i class="fas fa-at"></i>
-              <span class="email-text"
-                >{{ site.data.profile.email | replace: "@", "(at)" }}</span
-              >
+
+          <div class="myst-hero-actions myst-reveal myst-d5">
+            <a class="myst-action" href="mailto:{{ site.data.profile.email | encode_email }}">
+              <i class="fas fa-at" aria-hidden="true"></i>
+              <span>{{ site.data.profile.email | replace: "@", "(at)" }}</span>
             </a>
 
-            {% if site.data.profile.gscholar %} {%- if
-            site.data.profile.gscholar contains 'scholar.google' -%} {%- assign
-            gscholar_url = site.data.profile.gscholar -%} {%- else -%} {%-
-            assign gscholar_url = 'https://scholar.google.com/citations?user=' |
-            append: site.data.profile.gscholar -%} {%- endif -%}
-            <a class="pr-3 no-break" target="_blank" href="{{ gscholar_url }}">
-              <i class="fab fa-google-scholar"></i> Google Scholar
+            {% if site.data.profile.gscholar %}
+            {%- if site.data.profile.gscholar contains 'scholar.google' -%}
+            {%- assign gscholar_url = site.data.profile.gscholar -%}
+            {%- else -%}
+            {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
+            {%- endif -%}
+            <a class="myst-action" target="_blank" href="{{ gscholar_url }}">
+              <i class="fab fa-google-scholar" aria-hidden="true"></i> Google Scholar
             </a>
-            {% endif %} {% if site.data.profile.github %}
-            <a
-              class="pr-3 no-break"
-              target="_blank"
-              href="https://github.com/{{ site.data.profile.github }}"
-            >
-              <i class="fab fa-github"></i> GitHub
+            {% endif %}
+
+            {% if site.data.profile.github %}
+            <a class="myst-action" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
+              <i class="fab fa-github" aria-hidden="true"></i> GitHub
             </a>
-            {% endif %} {% if site.data.profile.wechat_qrcode %}
-            <a
-              class="pr-3 no-break"
-              data-toggle="modal"
-              data-target="#modal-wechat"
-            >
-              <i class="fab fa-weixin"></i> WeChat
+            {% endif %}
+
+            {% if site.data.profile.wechat_qrcode %}
+            <a class="myst-action" data-toggle="modal" data-target="#modal-wechat">
+              <i class="fab fa-weixin" aria-hidden="true"></i> WeChat
             </a>
-            {% endif %} {% if site.data.profile.twitter %}
-            <a
-              class="pr-3 no-break"
-              target="_blank"
-              href="https://twitter.com/{{ site.data.profile.twitter }}"
-            >
-              <i class="fab fa-twitter"></i> Twitter
+            {% endif %}
+
+            {% if site.data.profile.twitter %}
+            <a class="myst-action" target="_blank" href="https://twitter.com/{{ site.data.profile.twitter }}">
+              <i class="fab fa-twitter" aria-hidden="true"></i> Twitter
             </a>
-            {% endif %} {% if site.data.profile.linkedin %}
-            <a
-              class="pr-3 no-break"
-              target="_blank"
-              href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}"
-            >
-              <i class="fab fa-linkedin"></i> LinkedIn
+            {% endif %}
+
+            {% if site.data.profile.linkedin %}
+            <a class="myst-action" target="_blank" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}">
+              <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
             </a>
-            {% endif %} {% if site.data.profile.orcid %}
-            <a
-              class="pr-3 no-break"
-              target="_blank"
-              href="https://orcid.org/{{ site.data.profile.orcid }}"
-            >
-              <i class="fab fa-orcid"></i> ORCID
+            {% endif %}
+
+            {% if site.data.profile.orcid %}
+            <a class="myst-action" target="_blank" href="https://orcid.org/{{ site.data.profile.orcid }}">
+              <i class="fab fa-orcid" aria-hidden="true"></i> ORCID
+            </a>
+            {% endif %}
+
+            {% if site.data.profile.cv_link %}
+            <a class="myst-action" target="_blank" href="{{ site.data.profile.cv_link | relative_url }}">
+              <i class="fas fa-file-alt" aria-hidden="true"></i> Curriculum Vitae
             </a>
             {% endif %}
           </div>
         </div>
       </div>
+
+      {% if site.data.profile.portrait_url %}
+      <div class="myst-portrait-col d-none d-lg-flex">
+        <div class="myst-portrait myst-reveal myst-d2">
+          <img
+            src="{{ site.data.profile.portrait_url | relative_url }}"
+            alt="Portrait of {{ site.data.profile.primary_name }}"
+          />
+        </div>
+      </div>
+      {% endif %}
     </div>
   </div>
-</div>
+</section>
 
 {% if site.data.profile.wechat_qrcode %}
 <div class="modal fade" id="modal-wechat" tabindex="-1" aria-hidden="true">
